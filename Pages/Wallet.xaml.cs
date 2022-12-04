@@ -16,26 +16,13 @@ using System.Windows.Shapes;
 namespace Pegasus_App.Pages
 {
     /// <summary>
-    /// Interação lógica para Login.xam
+    /// Interação lógica para Wallet.xam
     /// </summary>
-    public partial class Login : Page
+    public partial class Wallet : Page
     {
-        public Login()
+        public Wallet()
         {
             InitializeComponent();
-        }
-
-        private void LoginButton_Click(object sender, RoutedEventArgs e)
-        {
-            if(AutenticateUser(UsernameInput.Text, PasswordInput.Password))
-            {
-                Resume resume = new Resume();
-                resume.Show();
-            }
-        }
-        private bool AutenticateUser(string username, string password)
-        {
-            return true;
         }
     }
 }

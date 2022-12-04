@@ -24,5 +24,28 @@ namespace Pegasus_App.Pages
         {
             InitializeComponent();
         }
+
+        private void RegisterButtonClick(object sender, RoutedEventArgs e)
+        {
+            if (PasswordInput.Password != PasswordConfirmationInput.Password)
+            {
+                MessageBox.Show("Passwords didn't match");
+            } else if (NameInput.Text == "")
+            {
+                MessageBox.Show("Name cannot be null");
+            } else if (EmailInput.Text == "")
+            {
+                MessageBox.Show("Email cannot be null");
+            } else
+            {
+                RegisterUser(NameInput.Text, EmailInput.Text, PasswordInput.Password);
+                
+            }
+        }
+        private void RegisterUser(string name, string email, string password)
+        {
+            MessageBox.Show("User registered with sucess!");
+            this.NavigationService.Navigate(new Login());
+        }
     }
 }

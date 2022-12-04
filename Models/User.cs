@@ -10,11 +10,10 @@ namespace Pegasus_App.Models
     {
         public static Guid ID { get; set; }
         public static string? Name { get; set; }
-        public static string? Username { get; set; }
         public static string? Email { get; set; }
-        public static void GetUser(string username)
+        public static void GetUser(string name)
         {
-            Username = username;
+            Name = name;
         }
     }
 }
