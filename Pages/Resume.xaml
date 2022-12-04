@@ -11,21 +11,34 @@
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
             <Grid Margin="0,0,60,0" Width="500" Height="620" Background="#0c2233">
                 <StackPanel>
-                    <Label Margin="0,40,0,0" Foreground="#FFFFFF" FontSize="40" HorizontalAlignment="Center" FontWeight="ExtraLight">
-                        Minha Carteira
+                    <Label Margin="0,40,0,80" Foreground="#FFFFFF" FontSize="40" HorizontalAlignment="Center" FontWeight="ExtraLight">
+                        My Wallet
                     </Label>
-                    <StackPanel Width="400" HorizontalAlignment="Center" VerticalAlignment="Center">
-                        <Label Foreground="#FFFFFF" FontSize="20" FontWeight="ExtraLight" HorizontalAlignment="Left">Henrique Eduardo dos Santos de Souza</Label>
-                        <Label Foreground="#FFFFFF" FontSize="20" FontWeight="ExtraLight" HorizontalAlignment="Left">ID: 3443-4422-2333-1111</Label>
-                        <Label Foreground="#FFFFFF" FontSize="20" FontWeight="ExtraLight" HorizontalAlignment="Left">Saldo: R$ 36.943,32</Label>
-                        <Label Foreground="#FFFFFF" FontSize="20" FontWeight="ExtraLight" HorizontalAlignment="Left">Lucro: R$ 12.431,97</Label>
-                    </StackPanel>
+                    <Grid Margin="0,00,0,5" Width="400" Height="40" Background="#355066">
+                        <StackPanel Orientation="Horizontal">
+                            <Image Margin="20,0,0,0" Width="50" Source="/Pages/AmountIcon.png"></Image>
+                            <Label Foreground="#FFFFFF" Margin="20,0,0,0" VerticalAlignment="Center" FontSize="18" FontWeight="ExtraLight">Amount: R$ 134,454.57</Label>
+                        </StackPanel>
+                    </Grid>
+                    <Grid Margin="0,00,0,5" Width="400" Height="40" Background="#355066">
+                        <StackPanel Orientation="Horizontal">
+                            <Image Margin="20,0,0,0" Width="50" Source="/Pages/BalanceIcon.png"></Image>
+                            <Label Foreground="#FFFFFF" Margin="20,0,0,0" VerticalAlignment="Center" FontSize="18" FontWeight="ExtraLight">Balance: R$ 11,551.92</Label>
+                        </StackPanel>
+                    </Grid>
+                    <Grid Margin="0,00,0,5" Width="400" Height="40" Background="#355066">
+                        <StackPanel Orientation="Horizontal">
+                            <Image Margin="20,0,0,0" Width="50" Source="/Pages/YieldIcon.png"></Image>
+                            <Label Foreground="#FFFFFF" Margin="20,0,0,0" VerticalAlignment="Center" FontSize="18" FontWeight="ExtraLight">Yield: +12.54%</Label>
+                        </StackPanel>
+                    </Grid>
                 </StackPanel>
+                
             </Grid>
             <Grid Margin="0,0,0,0" Width="500" Height="620" Background="#0c2233">
                 <StackPanel>
                     <Label Margin="0,40,0,0" Foreground="#FFFFFF" FontSize="40" HorizontalAlignment="Center" FontWeight="ExtraLight">
-                        Ações
+                        Stocks
                     </Label>
                     <Grid Margin="0,0,0,20" Width="430" Height="150" Background="#355066">
                         <StackPanel Width="400" HorizontalAlignment="Center" VerticalAlignment="Center">

@@ -9,8 +9,20 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Pages\AmountIcon.png" />
+    <None Remove="Pages\BalanceIcon.png" />
+    <None Remove="Pages\YieldIcon.png" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Folder Include="Icons\" />
     <Folder Include="Images\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Pages\AmountIcon.png" />
+    <Resource Include="Pages\BalanceIcon.png" />
+    <Resource Include="Pages\YieldIcon.png" />
   </ItemGroup>
 
 </Project>

@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         WindowStartupLocation="CenterOwner"
         WindowState="Maximized"
-        Title="MainWindow" Height="720" Width="1280">
+        Title="Pegasus" Height="720" Width="1280">
     <Grid>
         <Frame Name ="MainWindowFrame"></Frame>
     </Grid>

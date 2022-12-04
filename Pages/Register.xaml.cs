@@ -44,8 +44,15 @@ namespace Pegasus_App.Pages
         }
         private void RegisterUser(string name, string email, string password)
         {
-            MessageBox.Show("User registered with sucess!");
-            this.NavigationService.Navigate(new Login());
+            bool sucess = true;
+            if (sucess)
+            {
+                MessageBox.Show("User registered with sucess!");
+                this.NavigationService.Navigate(new Login());
+            } else {
+                MessageBox.Show("User registration fail!");
+            }
+            
         }
     }
 }
