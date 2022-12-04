@@ -1,0 +1,61 @@
+﻿<Window x:Class="Pegasus_App.Pages.Resume"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Pegasus_App.Pages"
+        mc:Ignorable="d"
+        Title="Resume" Height="720" Width="1280">
+    <Grid Background="#001423">
+        <Label Name="WelcomeLabel"  Foreground="#FFFFFF" FontSize="16" HorizontalAlignment="Center"></Label>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Grid Margin="0,0,60,0" Width="500" Height="620" Background="#0c2233">
+                <StackPanel>
+                    <Label Margin="0,40,0,0" Foreground="#FFFFFF" FontSize="40" HorizontalAlignment="Center" FontWeight="ExtraLight">
+                        Minha Carteira
+                    </Label>
+                    <StackPanel Width="400" HorizontalAlignment="Center" VerticalAlignment="Center">
+                        <Label Foreground="#FFFFFF" FontSize="20" FontWeight="ExtraLight" HorizontalAlignment="Left">Henrique Eduardo dos Santos de Souza</Label>
+                        <Label Foreground="#FFFFFF" FontSize="20" FontWeight="ExtraLight" HorizontalAlignment="Left">ID: 3443-4422-2333-1111</Label>
+                        <Label Foreground="#FFFFFF" FontSize="20" FontWeight="ExtraLight" HorizontalAlignment="Left">Saldo: R$ 36.943,32</Label>
+                        <Label Foreground="#FFFFFF" FontSize="20" FontWeight="ExtraLight" HorizontalAlignment="Left">Lucro: R$ 12.431,97</Label>
+                    </StackPanel>
+                </StackPanel>
+            </Grid>
+            <Grid Margin="0,0,0,0" Width="500" Height="620" Background="#0c2233">
+                <StackPanel>
+                    <Label Margin="0,40,0,0" Foreground="#FFFFFF" FontSize="40" HorizontalAlignment="Center" FontWeight="ExtraLight">
+                        Ações
+                    </Label>
+                    <Grid Margin="0,0,0,20" Width="430" Height="150" Background="#355066">
+                        <StackPanel Width="400" HorizontalAlignment="Center" VerticalAlignment="Center">
+                            <Label Foreground="#FFFFFF" FontSize="16" FontWeight="ExtraLight" HorizontalAlignment="Left">PETR4</Label>
+                            <Label Foreground="#FFFFFF" FontSize="16" FontWeight="ExtraLight" HorizontalAlignment="Left">Receita: 150,64bi</Label>
+                            <Label Foreground="#FFFFFF" FontSize="16" FontWeight="ExtraLight" HorizontalAlignment="Left">Renda Líquida: 46,1bi</Label>
+                            <Label Foreground="#FFFFFF" FontSize="16" FontWeight="ExtraLight" HorizontalAlignment="Left">EPS Diluído: 3,53</Label>
+                            <Label Foreground="#FFFFFF" FontSize="16" FontWeight="ExtraLight" HorizontalAlignment="Left">Margem de Lucro Líquida: 30,6%</Label>
+                        </StackPanel>
+                    </Grid>
+                    <Grid Margin="0,0,0,20" Width="430" Height="150" Background="#355066">
+                        <StackPanel Width="400" HorizontalAlignment="Center" VerticalAlignment="Center">
+                            <Label Foreground="#FFFFFF" FontSize="16" FontWeight="ExtraLight" HorizontalAlignment="Left">ASAI3</Label>
+                            <Label Foreground="#FFFFFF" FontSize="16" FontWeight="ExtraLight" HorizontalAlignment="Left">Receita: 13,83bi</Label>
+                            <Label Foreground="#FFFFFF" FontSize="16" FontWeight="ExtraLight" HorizontalAlignment="Left">Renda Líquida: 281mi</Label>
+                            <Label Foreground="#FFFFFF" FontSize="16" FontWeight="ExtraLight" HorizontalAlignment="Left">EPS Diluído: 	0,21</Label>
+                            <Label Foreground="#FFFFFF" FontSize="16" FontWeight="ExtraLight" HorizontalAlignment="Left">Margem de Lucro Líquida: 2,03%</Label>
+                        </StackPanel>
+                    </Grid>
+                    <Grid Margin="0,0,0,20" Width="430" Height="150" Background="#355066">
+                        <StackPanel Width="400" HorizontalAlignment="Center" VerticalAlignment="Center">
+                            <Label Foreground="#FFFFFF" FontSize="16" FontWeight="ExtraLight" HorizontalAlignment="Left">MGLU3</Label>
+                            <Label Foreground="#FFFFFF" FontSize="16" FontWeight="ExtraLight" HorizontalAlignment="Left">Receita: 	8,81bi</Label>
+                            <Label Foreground="#FFFFFF" FontSize="16" FontWeight="ExtraLight" HorizontalAlignment="Left">Renda Líquida: -166,76mi</Label>
+                            <Label Foreground="#FFFFFF" FontSize="16" FontWeight="ExtraLight" HorizontalAlignment="Left">EPS Diluído: -0,02</Label>
+                            <Label Foreground="#FFFFFF" FontSize="16" FontWeight="ExtraLight" HorizontalAlignment="Left">Margem de Lucro Líquida: -1,89%</Label>
+                        </StackPanel>
+                    </Grid>
+                </StackPanel>
+            </Grid>
+        </StackPanel>
+    </Grid>
+</Window>
