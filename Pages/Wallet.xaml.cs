@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Pegasus_App.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,22 @@ namespace Pegasus_App.Pages
         public Wallet()
         {
             InitializeComponent();
+            LoadInvestments();
+        }
+        public void LoadInvestments()
+        {
+            Models.Wallet.GetWallet();
+            List<string> nomes = new List<string>();
+            nomes.Add("fsfs");
+            nomes.Add("fsfrrts");
+            nomes.Add("fsfttts");
+            nomes.Add("jhj");
+            foreach (var inv in nomes)
+            {
+                TextBlock tb = new TextBlock();
+                tb.Text = inv;
+                tb.FontSize = 24;
+            }
         }
     }
 }

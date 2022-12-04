@@ -15,5 +15,6 @@ namespace Pegasus_App.Models
         {
             Name = name;
         }
+
     }
 }

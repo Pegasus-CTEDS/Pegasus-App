@@ -37,5 +37,10 @@ namespace Pegasus_App.Models
         /// </summary>
         public static List<Investment>? Investments { get; set; }
 
+        public static void GetWallet()
+        {
+
+        }
+
     }
 }

@@ -10,19 +10,24 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace Pegasus_App.Pages
 {
     /// <summary>
-    /// Lógica interna para Resume.xaml
+    /// Interação lógica para Resume.xam
     /// </summary>
-    public partial class Resume : Window
+    public partial class Resume : Page
     {
         public Resume()
         {
             InitializeComponent();
-            
+        }
+
+        private void OpenWallet_Click(object sender, RoutedEventArgs e)
+        {
+            this.NavigationService.Navigate(new Wallet());
         }
     }
 }

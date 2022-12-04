@@ -29,8 +29,8 @@ namespace Pegasus_App.Pages
         {
             if(AutenticateUser(UsernameInput.Text, PasswordInput.Password))
             {
-                Resume resume = new Resume();
-                resume.Show();
+                UserSpace us = new UserSpace();
+                us.Show();
             }
         }
         private bool AutenticateUser(string username, string password)

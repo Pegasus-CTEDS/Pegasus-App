@@ -9,6 +9,8 @@
       Title="Wallet">
 
     <Grid Background="#001423">
-        
+        <StackPanel Name="InvestmentListPanel">
+            <TextBlock Foreground="#FFFFFF" FontSize="32">ASAI3</TextBlock>
+        </StackPanel>
     </Grid>
 </Page>
