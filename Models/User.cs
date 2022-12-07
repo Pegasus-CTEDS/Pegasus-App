@@ -8,13 +8,7 @@ namespace Pegasus_App.Models
 {
     public class User
     {
-        public static Guid ID { get; set; }
-        public static string? Name { get; set; }
+        public static string? Username { get; set; }
         public static string? Email { get; set; }
-        public static void GetUser(string name)
-        {
-            Name = name;
-        }
-
     }
 }

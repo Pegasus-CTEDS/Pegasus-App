@@ -1,5 +1,4 @@
-﻿using Pegasus_App.Pages;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,21 +10,19 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Pegasus_App
+namespace Pegasus_App.Pages
 {
-
     /// <summary>
-    /// Lógica interna para UserSpace.xaml
+    /// Interaction logic for Page1.xaml
     /// </summary>
-    public partial class UserSpace : Window
+    public partial class Page1 : Page
     {
-        ClientConnection conn;
-        public UserSpace(ClientConnection conn)
+        public Page1()
         {
             InitializeComponent();
-            UserSpaceFrame.Content = new Wallet(conn);
         }
     }
 }

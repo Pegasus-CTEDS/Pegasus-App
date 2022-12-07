@@ -13,6 +13,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+using PegasusPacket;
+
 namespace Pegasus_App.Pages
 {
     /// <summary>
@@ -20,22 +22,27 @@ namespace Pegasus_App.Pages
     /// </summary>
     public partial class Login : Page
     {
-        public Login()
+
+        ClientConnection conn;
+
+        public Login(ClientConnection conn)
         {
             InitializeComponent();
+            this.conn = conn;
         }
 
         private void LoginButton_Click(object sender, RoutedEventArgs e)
         {
-            if(AutenticateUser(UsernameInput.Text, PasswordInput.Password))
+            Packet packetIn = conn.RequestLogin(UsernameInput.Text, PasswordInput.Password);
+            if(packetIn.RequestStatus == Packet.Status.Success)
             {
-                UserSpace us = new UserSpace();
+                UserSpace us = new UserSpace(conn);
                 us.Show();
+            } 
+            else
+            {
+                MessageBox.Show(packetIn.ServerResponseMessage);
             }
-        }
-        private bool AutenticateUser(string username, string password)
-        {
-            return true;
         }
     }
 }

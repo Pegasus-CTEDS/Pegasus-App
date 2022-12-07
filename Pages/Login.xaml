@@ -10,17 +10,21 @@
       Title="Login">
 
     <Grid Background="#001423">
-        <Rectangle Width="480" Height="490" Fill="#0c2233">
-
-        </Rectangle>
+        <Rectangle Width="480" Height="490" Fill="#0c2233"></Rectangle>
         <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
-            <Label Margin="0,20,0,50" FontWeight="ExtraLight" HorizontalAlignment="Center" FontSize="32" Foreground="#FFFFFF">Sign Up Section</Label>
-            <TextBlock Width="400" Margin="300,10,300,5" Foreground="#FFFFFF" FontSize="22" FontWeight="ExtraLight" TextAlignment="Left"> Username or Email:</TextBlock>
+            <Label Margin="0,20,0,50" FontWeight="ExtraLight" HorizontalAlignment="Center" FontSize="32" Foreground="#FFFFFF">Entrar</Label>
+            <TextBlock Width="400" Margin="300,10,300,5" Foreground="#FFFFFF" FontSize="22" FontWeight="ExtraLight" TextAlignment="Left"> Usuário:</TextBlock>
             <TextBox Name="UsernameInput" Width="400" Height="30" FontSize="22"></TextBox>
-            <TextBlock Width="400" Margin="300,10,300,5" Foreground="#FFFFFF" FontSize="22" FontWeight="ExtraLight"> Password:</TextBlock>
+            <TextBlock Width="400" Margin="300,10,300,5" Foreground="#FFFFFF" FontSize="22" FontWeight="ExtraLight"> Senha:</TextBlock>
             <PasswordBox Name="PasswordInput" Width="400" Height="30" FontSize="22"></PasswordBox>
-            <CheckBox Margin="300,10,300,0" FontWeight="ExtraLight" VerticalAlignment="Center" Foreground="#FFFFFF" FontSize="22">Remember me</CheckBox>
-            <TextBlock FontWeight="ExtraLight" Margin="300, 0, 300, 10" HorizontalAlignment="Right" Foreground="#FFFFFF" FontSize="22">Forgot the password?</TextBlock>
+            <!-- TODO [3]
+                 - Tem que implementar a lógica por trás da lembrança do usuário e da senha (provavelmente salvar em um arquivo temporário)
+            <CheckBox Margin="300,10,300,0" FontWeight="ExtraLight" VerticalAlignment="Center" Foreground="#FFFFFF" FontSize="22">Lembrar-me</CheckBox>
+            -->
+            <!-- TODO [inf]
+                 - Exige um protocolo próprio de segurança em que a senha é enviada por e-mail. Não há tempo.
+            <Button FontWeight="ExtraLight" Margin="300, 0, 300, 10" HorizontalAlignment="Right" Foreground="#FFFFFF" FontSize="22">Esqueceu a senha?</Button>
+            -->
             <Button FontWeight="ExtraLight" Name="LoginButton" Click="LoginButton_Click" Width="300" Height="50" Margin="300, 0, 300, 10" Content="Login" Background="#1E2832" FontSize="24" Foreground="#FFFFFF"></Button>
         </StackPanel>
     </Grid>

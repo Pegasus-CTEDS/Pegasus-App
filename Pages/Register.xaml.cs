@@ -13,6 +13,9 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+using PegasusPacket;
+using System.Net.Sockets;
+
 namespace Pegasus_App.Pages
 {
     /// <summary>
@@ -20,39 +23,43 @@ namespace Pegasus_App.Pages
     /// </summary>
     public partial class Register : Page
     {
-        public Register()
+
+        ClientConnection conn;
+
+        public Register(ClientConnection conn)
         {
             InitializeComponent();
+            this.conn = conn;
         }
 
         private void RegisterButtonClick(object sender, RoutedEventArgs e)
         {
             if (PasswordInput.Password != PasswordConfirmationInput.Password)
             {
-                MessageBox.Show("Passwords didn't match");
-            } else if (NameInput.Text == "")
+                MessageBox.Show("Senhas não são equivalentes.");
+            }
+            else if (NameInput.Text == "")
             {
-                MessageBox.Show("Name cannot be null");
-            } else if (EmailInput.Text == "")
+                MessageBox.Show("Usuário não foi preenchido.");
+            }
+            else if (EmailInput.Text == "")
             {
-                MessageBox.Show("Email cannot be null");
-            } else
+                MessageBox.Show("Email não foi preenchido.");
+            }
+            else
             {
                 RegisterUser(NameInput.Text, EmailInput.Text, PasswordInput.Password);
                 
             }
         }
-        private void RegisterUser(string name, string email, string password)
+        private void RegisterUser(string username, string email, string password)
         {
-            bool sucess = true;
-            if (sucess)
+            Packet packetIn = conn.RequestSignIn(username, email, password);
+            MessageBox.Show(packetIn.ServerResponseMessage);
+            if (packetIn.RequestStatus == Packet.Status.Success)
             {
-                MessageBox.Show("User registered with sucess!");
-                this.NavigationService.Navigate(new Login());
-            } else {
-                MessageBox.Show("User registration fail!");
+                this.NavigationService.Navigate(new Login(conn));
             }
-            
         }
     }
 }

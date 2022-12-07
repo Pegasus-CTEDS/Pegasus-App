@@ -9,9 +9,29 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Class1.cs" />
+    <Compile Remove="Class2.cs" />
+    <Compile Remove="Networking.cs" />
+    <Compile Remove="Pages\Page1.xaml.cs" />
+    <Compile Remove="Pages\Resume.xaml.cs" />
+    <Compile Remove="Pages\Wallet - Copy.xaml.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Remove="Pages\AmountIcon.png" />
     <None Remove="Pages\BalanceIcon.png" />
+    <None Remove="Pages\XMLFile1.xml" />
     <None Remove="Pages\YieldIcon.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Remove="Pages\Page1.xaml" />
+    <Page Remove="Pages\Resume.xaml" />
+    <Page Remove="Pages\Wallet - Copy.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Include="..\PegasusServer\PegasusServer\Packet.cs" Link="Packet.cs" />
   </ItemGroup>
 
   <ItemGroup>
@@ -23,6 +43,12 @@
     <Resource Include="Pages\AmountIcon.png" />
     <Resource Include="Pages\BalanceIcon.png" />
     <Resource Include="Pages\YieldIcon.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Pages\Operations.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
 
 </Project>
