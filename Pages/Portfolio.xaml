@@ -15,7 +15,6 @@
                 <Grid Width="500" Height="620" Background="#0c2233">
                     <StackPanel>
                         <Label Margin="0,40,0,80" Foreground="#FFFFFF" FontSize="40" HorizontalAlignment="Center" FontWeight="ExtraLight" Content="Portfólio"/>
-                        <DataGrid x:Name="PortfolioGrid" ItemsSource="{Binding}"></DataGrid>
                     </StackPanel>
                 </Grid>
             </StackPanel>

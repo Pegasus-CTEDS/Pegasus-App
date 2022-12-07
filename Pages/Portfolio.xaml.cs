@@ -58,7 +58,5 @@ namespace Pegasus_App.Pages
         {
             
         }
-
-
     }
 }
