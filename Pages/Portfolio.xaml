@@ -40,24 +40,27 @@
                     <StackPanel>
                         <Label Margin="0,40,0,80" Foreground="#FFFFFF" FontSize="40" HorizontalAlignment="Center" FontWeight="ExtraLight" Content="Investimentos"/>
                     </StackPanel>
-                    <StackPanel Margin="0,140,0,0">
-                        <Grid Margin="0,0,0,10" Width="800" Height="90" Background="#1163ada8" VerticalAlignment="Center">
-                            <Label Margin="10,0,0,0" Foreground="#FFFFFF" FontSize="18" FontWeight="ExtraLight">ASAI3</Label>
-                            <Label Margin="10,20,0,0" Foreground="#FFFFFF" FontSize="18" FontWeight="ExtraLight">Valor:</Label>
-                            <Label Margin="10,20,0,0" Foreground="#FFFFFF" FontSize="18" FontWeight="ExtraLight">Valor:</Label>
-                        </Grid>
-                        <Grid Margin="0,0,0,10" Width="800" Height="90" Background="#1163ada8" VerticalAlignment="Center">
-                            <Label Margin="10,0,0,0" Foreground="#FFFFFF" FontSize="18" FontWeight="ExtraLight">ASAI3</Label>
-                            <Label Margin="10,20,0,0" Foreground="#FFFFFF" FontSize="18" FontWeight="ExtraLight">Valor:</Label>
-                            <Label Margin="10,20,0,0" Foreground="#FFFFFF" FontSize="18" FontWeight="ExtraLight">Valor:</Label>
-                        </Grid>
-                        <Grid Margin="0,0,0,10" Width="800" Height="90" Background="#1163ada8" VerticalAlignment="Center">
-                            <Label Margin="10,0,0,0" Foreground="#FFFFFF" FontSize="18" FontWeight="ExtraLight">ASAI3</Label>
-                            <Label Margin="10,20,0,0" Foreground="#FFFFFF" FontSize="18" FontWeight="ExtraLight">Valor:</Label>
-                            <Label Margin="10,20,0,0" Foreground="#FFFFFF" FontSize="18" FontWeight="ExtraLight">Valor:</Label>
-                        </Grid>
-                        
-                    </StackPanel>
+                    <ScrollViewer>
+                        <StackPanel Margin="0,140,0,0">
+                            <Grid Margin="0,0,0,10" Width="800" Height="90" Background="#1163ada8" VerticalAlignment="Center">
+                                <Label Margin="10,0,0,0" Foreground="#FFFFFF" FontSize="18" FontWeight="ExtraLight">ASAI3</Label>
+                                <Label Margin="10,20,0,0" Foreground="#FFFFFF" FontSize="18" FontWeight="ExtraLight">Valor:</Label>
+                                <Label Margin="10,20,0,0" Foreground="#FFFFFF" FontSize="18" FontWeight="ExtraLight">Valor:</Label>
+                            </Grid>
+                            <Grid Margin="0,0,0,10" Width="800" Height="90" Background="#1163ada8" VerticalAlignment="Center">
+                                <Label Margin="10,0,0,0" Foreground="#FFFFFF" FontSize="18" FontWeight="ExtraLight">ASAI3</Label>
+                                <Label Margin="10,20,0,0" Foreground="#FFFFFF" FontSize="18" FontWeight="ExtraLight">Valor:</Label>
+                                <Label Margin="10,20,0,0" Foreground="#FFFFFF" FontSize="18" FontWeight="ExtraLight">Valor:</Label>
+                            </Grid>
+                            <Grid Margin="0,0,0,10" Width="800" Height="90" Background="#1163ada8" VerticalAlignment="Center">
+                                <Label Margin="10,0,0,0" Foreground="#FFFFFF" FontSize="18" FontWeight="ExtraLight">ASAI3</Label>
+                                <Label Margin="10,20,0,0" Foreground="#FFFFFF" FontSize="18" FontWeight="ExtraLight">Valor:</Label>
+                                <Label Margin="10,20,0,0" Foreground="#FFFFFF" FontSize="18" FontWeight="ExtraLight">Valor:</Label>
+                            </Grid>
+
+                        </StackPanel>
+                    </ScrollViewer>
+                    
                 </Grid>
                 
             </StackPanel>
