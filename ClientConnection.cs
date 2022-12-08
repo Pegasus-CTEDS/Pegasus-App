@@ -24,6 +24,13 @@ namespace Pegasus_App
         TcpClient Client { get; } 
         NetworkStream Stream { get; }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="username"></param>
+        /// <param name="email"></param>
+        /// <param name="password"></param>
+        /// <returns></returns>
         public Packet RequestSignIn(string username, string email, string password)
         {
             Packet packetOut = new Packet(Packet.PacketType.SignIn);
@@ -37,6 +44,12 @@ namespace Pegasus_App
             return packetIn;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="username"></param>
+        /// <param name="password"></param>
+        /// <returns></returns>
         public Packet RequestLogin(string username, string password)
         {
             Packet packetOut = new Packet(Packet.PacketType.Login);
@@ -49,6 +62,10 @@ namespace Pegasus_App
             return packetIn;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         public Packet RequestLogout()
         {
             Packet packetOut = new Packet(Packet.PacketType.Logout);
@@ -57,7 +74,12 @@ namespace Pegasus_App
             return packetIn;
         }
 
-        public Packet RequestData(List<Packet.RequestedDataType> requestedData)
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="requestedData"></param>
+        /// <returns></returns>
+        public Packet RequestDataGet(List<Packet.RequestedDataType> requestedData)
         {
             Packet packetOut = new Packet(Packet.PacketType.DataGet);
             packetOut.RequestedData = requestedData;
@@ -65,6 +87,43 @@ namespace Pegasus_App
             Packet packetIn = ReceivePacket();
             return packetIn;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="requestedData"></param>
+        /// <returns></returns>
+        public Packet RequestWalletDataGet()
+        {
+            List<Packet.RequestedDataType> requestedData = new List<Packet.RequestedDataType>() { Packet.RequestedDataType.Wallet };
+            return RequestDataGet(requestedData);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="balance"></param>
+        /// <param name="invested"></param>
+        /// <returns></returns>
+        public Packet RequestWalletDataPut(double balance, double invested)
+        {
+            Packet packetOut = new Packet(Packet.PacketType.DataPut);
+            packetOut.RequestedData.Add(Packet.RequestedDataType.Wallet);
+            packetOut.WalletData.Balance = balance;
+            packetOut.WalletData.Invested = invested;
+            SendPacket(packetOut);
+            Packet packetIn = ReceivePacket();
+            return packetIn;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="assetName"></param>
+        /// <param name="date"></param>
+        /// <param name="price"></param>
+        /// <param name="quantity"></param>
+        /// <returns></returns>
         public Packet RequestSellOperation(string assetName, DateTime date, double price, int quantity)
         {
             List<Packet.RequestedDataType> requestedData = new List<Packet.RequestedDataType>() { Packet.RequestedDataType.Operation };
@@ -77,6 +136,14 @@ namespace Pegasus_App
             return RequestOperation(requestedData, operationData);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="assetName"></param>
+        /// <param name="date"></param>
+        /// <param name="price"></param>
+        /// <param name="quantity"></param>
+        /// <returns></returns>
         public Packet RequestBuyOperation(string assetName, DateTime date, double price, int quantity)
         {
             List<Packet.RequestedDataType> requestedData = new List<Packet.RequestedDataType>() { Packet.RequestedDataType.Operation };
@@ -89,9 +156,15 @@ namespace Pegasus_App
             return RequestOperation(requestedData, operationData);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="requestedData"></param>
+        /// <param name="operationData"></param>
+        /// <returns></returns>
         public Packet RequestOperation(List<Packet.RequestedDataType> requestedData, Packet.OperationDataField operationData)
         {
-            Packet packetOut = new Packet(Packet.PacketType.DataGet);
+            Packet packetOut = new Packet(Packet.PacketType.DataPut);
             packetOut.RequestedData = requestedData;
             packetOut.OperationData = operationData;
             SendPacket(packetOut);
@@ -99,8 +172,26 @@ namespace Pegasus_App
             return packetIn;
         }
 
-        public Packet RequestPortfolioAssetsData(List<Packet.PortfolioDataField> portfolio)
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        public Packet RequestPortfolioDataGet()
         {
+            List<Packet.RequestedDataType> requestedData = new List<Packet.RequestedDataType>() { Packet.RequestedDataType.Portfolio };
+            return RequestDataGet(requestedData);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="portfolio"></param>
+        /// <returns></returns>
+        public Packet RequestPortfolioAssetsData()
+        {
+            Packet packetIn = RequestPortfolioDataGet();
+            List<Packet.PortfolioDataField> portfolio = packetIn.PortfolioData;
+
             List<string> assetsNames = new();
             foreach (Packet.PortfolioDataField field in portfolio)
             {
@@ -109,6 +200,11 @@ namespace Pegasus_App
             return RequestAssetsData(assetsNames);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="assetsNames"></param>
+        /// <returns></returns>
         public Packet RequestAssetsData(List<string> assetsNames)
         {
             Packet packetOut = new Packet(Packet.PacketType.DataGet);
@@ -124,12 +220,20 @@ namespace Pegasus_App
             return packetIn;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="packetOut"></param>
         public void SendPacket(Packet packetOut)
         {
             byte[] data = Packet.PacketSerialize(packetOut);
             Stream.Write(data, 0, data.Length);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         public Packet ReceivePacket()
         {
             Packet? packetIn;

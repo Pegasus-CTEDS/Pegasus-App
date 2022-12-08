@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -22,32 +23,30 @@ namespace Pegasus_App.Pages
     /// </summary>
     public partial class Wallet : Page
     {
-
-        ClientConnection conn;
-
         public Wallet(ClientConnection conn)
         {
-
+            InitializeComponent();
             this.conn = conn;
-            List<Packet.RequestedDataType> requestedData = new List<Packet.RequestedDataType>() { Packet.RequestedDataType.Wallet, Packet.RequestedDataType.Portfolio };
-            Packet packetIn = conn.RequestData(requestedData);
-            double balance = packetIn.WalletData.Balance;
-            double invested = packetIn.WalletData.Invested;
+            LoadWalletData();
+        }
+        
+        ClientConnection conn;
+        double invested;
+        double balance;
+
+        public void LoadWalletData()
+        {
+            Packet packetIn;
+            
+            packetIn = conn.RequestWalletDataGet();
+            balance = packetIn.WalletData.Balance;
+            invested = packetIn.WalletData.Invested;
             BalanceLabel.Content = String.Format("Disponível: R$ {0}", balance);
             InvestedLabel.Content = String.Format("Investido: R$ {0}", invested);
-            packetIn = conn.RequestPortfolioAssetsData(packetIn.PortfolioData);
-            YieldLabel.Content = String.Format("Ganho Total: R$ {0}", CalculateTotalYield(invested, packetIn.PortfolioData, packetIn.AssetData));
-            
-            InitializeComponent();
-        }
 
-        private void OpenOperationsPage_Click(object sender, RoutedEventArgs e)
-        {
-            this.NavigationService.Navigate(new Operations(conn));
-        }
-        private void OpenPortfolioPage_Click(object sender, RoutedEventArgs e)
-        {
-            this.NavigationService.Navigate(new Portfolio(conn));
+            packetIn = conn.RequestPortfolioAssetsData();
+            List<Packet.PortfolioDataField> portfolioData = packetIn.PortfolioData;
+            YieldLabel.Content = String.Format("Ganho Total: {0} %", CalculateTotalYield(invested, portfolioData, packetIn.AssetData));
         }
 
         public double CalculateTotalYield(double invested, List<Packet.PortfolioDataField> portfolio, List<Packet.AssetDataField> assetData)
@@ -67,13 +66,11 @@ namespace Pegasus_App.Pages
                 if (quantity == null) quantity = 0;
                 totalGains+= quantity * (closingPrice - averagePrice);
             }
-
             double? totalYield = (invested + totalGains) / invested;
-
             return (double)totalYield;
         }
 
-        double AssetMostRecentClosingPrice(List<Packet.AssetDataField> assetDataFields, string assetName)
+        public double AssetMostRecentClosingPrice(List<Packet.AssetDataField> assetDataFields, string assetName)
         {
             foreach (Packet.AssetDataField field in assetDataFields)
             {
@@ -85,6 +82,32 @@ namespace Pegasus_App.Pages
             return 0.0;
         }
 
+        private void AddFunds_Click(object sender, RoutedEventArgs e)
+        {
+            if (AddFundsAmount.Text == "") return;
+            double amount = Convert.ToDouble(AddFundsAmount.Text) + balance;
+            Packet packetIn = conn.RequestWalletDataPut(amount, invested);
+            if (packetIn != null && packetIn.RequestStatus == Packet.Status.Success)
+            {
+                BalanceLabel.Content = String.Format("Disponível: R$ {0}", amount);
+                MessageBox.Show("Sucesso!");
+            }
+            else
+            {
+                MessageBox.Show(packetIn.ServerResponseMessage);
+            }
+        }
 
+        private void OpenOperationsPage_Click(object sender, RoutedEventArgs e)
+        {
+            this.NavigationService.Navigate(new Operations(conn));
+            LoadWalletData();
+        }
+
+        private void OpenPortfolioPage_Click(object sender, RoutedEventArgs e)
+        {
+            this.NavigationService.Navigate(new Portfolio(conn));
+            LoadWalletData();
+        }
     }
 }

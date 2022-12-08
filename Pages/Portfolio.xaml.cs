@@ -17,8 +17,6 @@ using System.Data;
 
 namespace Pegasus_App.Pages
 {
-    /// <summary>
-    /// </summary>
     public partial class Portfolio : Page
     {
         public ClientConnection conn;
@@ -37,7 +35,7 @@ namespace Pegasus_App.Pages
             portfolioDataTable.Columns.Add("Rendimento");
 
             List<Packet.RequestedDataType> portfolioData = new List<Packet.RequestedDataType>() { Packet.RequestedDataType.Portfolio };
-            Packet packetIn = conn.RequestData(portfolioData);
+            Packet packetIn = conn.RequestDataGet(portfolioData);
             foreach (Packet.PortfolioDataField field in packetIn.PortfolioData)
             {
                 DataRow row = portfolioDataTable.NewRow();

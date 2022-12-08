@@ -44,8 +44,10 @@ namespace Pegasus_App.Pages
             {
                 packetIn = conn.RequestSellOperation(NameInput.Text, date, price, quantity);
             }
-            if (packetIn != null && packetIn.Type != Packet.PacketType.Undefined) 
+            if (packetIn != null && packetIn.Type != Packet.PacketType.Undefined && packetIn.RequestStatus != Packet.Status.Success) 
                 MessageBox.Show(packetIn.ServerResponseMessage);
+            else
+                MessageBox.Show("Operacao bem sucedida!");
         }
     }
 }
