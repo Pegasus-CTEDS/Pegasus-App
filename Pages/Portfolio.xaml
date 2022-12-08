@@ -14,10 +14,10 @@
                 <Label Name="WelcomeLabel"  Foreground="#FFFFFF" FontSize="16" HorizontalAlignment="Center"></Label>
             
             <StackPanel Orientation="Horizontal">
-                <Grid Width="200" Height="720" HorizontalAlignment="Left" Background="#1163ada8">
+                <Grid Width="250" Height="720" HorizontalAlignment="Left" Background="#1163ada8">
                     <StackPanel>
                         <Label Margin="0,30,0,0" Foreground="#FFFFFF" HorizontalAlignment="Center" FontWeight="ExtraLight" FontSize="18">Bem-vindo, Marcos!</Label>
-                        <Ellipse Margin="0,30,0,50" Width="120" Height="120" Fill="#FFFFFF"></Ellipse>
+                        <Ellipse Margin="0,30,0,50" Width="150" Height="150" Fill="#FFFFFF"></Ellipse>
                         <Grid Margin="0,0,0,20" Width="200" Height="60" VerticalAlignment="Center">
                             <Label Margin="0,0,0,0" Foreground="#FFFFFF" VerticalAlignment="Center" HorizontalAlignment="Center" FontWeight="ExtraLight" FontSize="16">Meu Perfil</Label>
                         </Grid>
@@ -36,7 +36,7 @@
 
                     </StackPanel>
                 </Grid>
-                <Grid Margin="50,0,0,0" Width="900" Height="620" Background="#0c2233">
+                <Grid Margin="60,0,0,0" Width="900" Height="620" Background="#0c2233">
                     <StackPanel>
                         <Label Margin="0,40,0,80" Foreground="#FFFFFF" FontSize="40" HorizontalAlignment="Center" FontWeight="ExtraLight" Content="Investimentos"/>
                     </StackPanel>
