@@ -39,12 +39,12 @@ namespace Pegasus_App.Pages
             foreach (Packet.PortfolioDataField field in packetIn.PortfolioData)
             {
                 DataRow row = portfolioDataTable.NewRow();
-                row["Nome"] = field.Name.ToString();
+                row["Código"] = field.Symbol.ToString();
                 row["Quantidade"] = field.Quantity.ToString();
                 row["Rendimento"] = field.AveragePrice.ToString(); // TODO [0]
                 portfolioDataTable.Rows.Add(row);
             }
-            PortfolioGrid.DataContext = portfolioDataTable.DefaultView;
+            // PortfolioGrid.DataContext = portfolioDataTable.DefaultView;
         }
 
         static void NewBuyOperation_Click(object sender, RoutedEventArgs e)

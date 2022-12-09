@@ -59,7 +59,7 @@ namespace Pegasus_App.Pages
             double? totalGains = 0.0;
             foreach (Packet.PortfolioDataField field in portfolio) 
             {
-                double closingPrice = AssetMostRecentClosingPrice(assetData, field.Name);
+                double closingPrice = AssetMostRecentClosingPrice(assetData, field.Symbol);
                 double? averagePrice = field.AveragePrice;
                 if (averagePrice == null) averagePrice = 0.0;
                 int? quantity = field.Quantity;
@@ -70,11 +70,11 @@ namespace Pegasus_App.Pages
             return (double)totalYield;
         }
 
-        public double AssetMostRecentClosingPrice(List<Packet.AssetDataField> assetDataFields, string assetName)
+        public double AssetMostRecentClosingPrice(List<Packet.AssetDataField> assetDataFields, string assetSymbol)
         {
             foreach (Packet.AssetDataField field in assetDataFields)
             {
-                if (field.Name == assetName)
+                if (field.Symbol == assetSymbol)
                 {
                     return field.PriceHistory.Last();
                 }   

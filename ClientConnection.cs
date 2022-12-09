@@ -119,16 +119,16 @@ namespace Pegasus_App
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="assetName"></param>
+        /// <param name="assetSymbol"></param>
         /// <param name="date"></param>
         /// <param name="price"></param>
         /// <param name="quantity"></param>
         /// <returns></returns>
-        public Packet RequestSellOperation(string assetName, DateTime date, double price, int quantity)
+        public Packet RequestSellOperation(string assetSymbol, DateTime date, double price, int quantity)
         {
             List<Packet.RequestedDataType> requestedData = new List<Packet.RequestedDataType>() { Packet.RequestedDataType.Operation };
             Packet.OperationDataField operationData = new();
-            operationData.AssetName= assetName;
+            operationData.Symbol= assetSymbol;
             operationData.Date = date;
             operationData.Price = price;
             operationData.Quantity = quantity;
@@ -139,16 +139,16 @@ namespace Pegasus_App
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="assetName"></param>
+        /// <param name="assetSymbol"></param>
         /// <param name="date"></param>
         /// <param name="price"></param>
         /// <param name="quantity"></param>
         /// <returns></returns>
-        public Packet RequestBuyOperation(string assetName, DateTime date, double price, int quantity)
+        public Packet RequestBuyOperation(string assetSymbol, DateTime date, double price, int quantity)
         {
             List<Packet.RequestedDataType> requestedData = new List<Packet.RequestedDataType>() { Packet.RequestedDataType.Operation };
             Packet.OperationDataField operationData = new();
-            operationData.AssetName= assetName;
+            operationData.Symbol= assetSymbol;
             operationData.Date = date;
             operationData.Price = price;
             operationData.Quantity = quantity;
@@ -192,33 +192,39 @@ namespace Pegasus_App
             Packet packetIn = RequestPortfolioDataGet();
             List<Packet.PortfolioDataField> portfolio = packetIn.PortfolioData;
 
-            List<string> assetsNames = new();
+            List<string> assetsSymbols = new();
             foreach (Packet.PortfolioDataField field in portfolio)
             {
-                assetsNames.Add(field.Name);
+                assetsSymbols.Add(field.Symbol);
             }
-            return RequestAssetsData(assetsNames);
+            return RequestAssetsData(assetsSymbols);
         }
 
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="assetsNames"></param>
+        /// <param name="assetsSymbols"></param>
         /// <returns></returns>
-        public Packet RequestAssetsData(List<string> assetsNames)
+        public Packet RequestAssetsData(List<string> assetsSymbols)
         {
             Packet packetOut = new Packet(Packet.PacketType.DataGet);
             packetOut.RequestedData = new List<Packet.RequestedDataType>() { Packet.RequestedDataType.Assets };
-            foreach (string assetName in assetsNames)
+            foreach (string assetSymbol in assetsSymbols)
             {
                 Packet.AssetDataField field = new();
-                field.Name = assetName;
+                field.Symbol = assetSymbol;
                 packetOut.AssetData.Add(field);
             }
             SendPacket(packetOut);
             Packet packetIn = ReceivePacket();
             return packetIn;
         }
+
+        // public Packet RequestAssetsList()
+        // {
+        //     Packet packetOut = new Packet(Packet.PacketType.DataGet);
+        //     packetOut.RequestedData.Add(Packet.RequestedDataType.Assets);
+        // }
 
         /// <summary>
         /// 
