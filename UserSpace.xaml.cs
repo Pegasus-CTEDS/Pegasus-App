@@ -25,7 +25,8 @@ namespace Pegasus_App
         public UserSpace(ClientConnection conn)
         {
             InitializeComponent();
-            UserSpaceFrame.Content = new Wallet(conn);
+            //UserSpaceFrame.Content = new Wallet(conn);
+            UserSpaceFrame.Content = new Portfolio(conn);
         }
     }
 }

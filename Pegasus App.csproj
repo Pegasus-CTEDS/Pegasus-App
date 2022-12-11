@@ -31,7 +31,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Include="..\PegasusServer\PegasusServer\Packet.cs" Link="Packet.cs" />
+    <Compile Include="..\Server\PegasusServer\Packet.cs" Link="Packet.cs" />
   </ItemGroup>
 
   <ItemGroup>

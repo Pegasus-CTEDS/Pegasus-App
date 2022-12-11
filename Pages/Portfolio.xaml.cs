@@ -19,11 +19,13 @@ namespace Pegasus_App.Pages
 {
     public partial class Portfolio : Page
     {
+        public Brush background_left_grid;
         public ClientConnection conn;
         public Portfolio(ClientConnection conn)
         {
             this.conn = conn;
             InitializeComponent();
+            background_left_grid = MeuPerfilGrid.Background;
             LoadPortfolioDataGridView();
         }
 
@@ -55,6 +57,86 @@ namespace Pegasus_App.Pages
         static void NewSellOperation_Click(object sender, RoutedEventArgs e)
         {
             
+        }
+
+        private void MeuPerfilGrid_MouseEnter(object sender, MouseEventArgs e)
+        {
+            var newcolor = new BrushConverter();
+            MeuPerfilGrid.Background = (Brush)newcolor.ConvertFrom("#1163ada8");
+        }
+
+        private void MeuPerfilGrid_MouseLeave(object sender, MouseEventArgs e)
+        {
+            MeuPerfilGrid.Background = background_left_grid;
+        }
+
+        private void MeuPerfilGrid_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            this.NavigationService.Navigate(new Portfolio(conn));
+        }
+
+        private void MinhaCarteiraGrid_MouseEnter(object sender, MouseEventArgs e)
+        {
+            var newcolor = new BrushConverter();
+            MinhaCarteiraGrid.Background = (Brush)newcolor.ConvertFrom("#1163ada8");
+        }
+
+        private void MinhaCarteiraGrid_MouseLeave(object sender, MouseEventArgs e)
+        {
+            MinhaCarteiraGrid.Background = background_left_grid;
+        }
+
+        private void MinhaCarteiraGrid_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            this.NavigationService.Navigate(new Wallet(conn));
+        }
+
+        private void MeusInvestimentosGrid_MouseEnter(object sender, MouseEventArgs e)
+        {
+            var newcolor = new BrushConverter();
+            MeusInvestimentosGrid.Background = (Brush)newcolor.ConvertFrom("#1163ada8");
+        }
+
+        private void MeusInvestimentosGrid_MouseLeave(object sender, MouseEventArgs e)
+        {
+            MeusInvestimentosGrid.Background = background_left_grid;
+        }
+
+        private void MeusInvestimentosGrid_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+
+        }
+
+        private void AcoesGrid_MouseEnter(object sender, MouseEventArgs e)
+        {
+            var newcolor = new BrushConverter();
+            AcoesGrid.Background = (Brush)newcolor.ConvertFrom("#1163ada8");
+        }
+
+        private void AcoesGrid_MouseLeave(object sender, MouseEventArgs e)
+        {
+            AcoesGrid.Background = background_left_grid;
+        }
+
+        private void AcoesGrid_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+
+        }
+
+        private void ConfiguracoesGrid_MouseEnter(object sender, MouseEventArgs e)
+        {
+            var newcolor = new BrushConverter();
+            ConfiguracoesGrid.Background = (Brush)newcolor.ConvertFrom("#1163ada8");
+        }
+
+        private void ConfiguracoesGrid_MouseLeave(object sender, MouseEventArgs e)
+        {
+            ConfiguracoesGrid.Background = background_left_grid;
+        }
+
+        private void ConfiguracoesGrid_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+
         }
     }
 }
