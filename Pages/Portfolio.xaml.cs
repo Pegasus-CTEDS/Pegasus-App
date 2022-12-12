@@ -138,5 +138,66 @@ namespace Pegasus_App.Pages
         {
 
         }
+
+        private void ViewMoreInv0_MouseEnter(object sender, MouseEventArgs e)
+        {
+            ViewMoreInv0.Source = new BitmapImage(new Uri("/Pages/ViewMoreActivatedIcon.png", UriKind.Relative));
+        }
+
+        private void ViewMoreInv0_MouseLeave(object sender, MouseEventArgs e)
+        {
+            //ViewMoreInv0.Source = new BitmapImage(new Uri("/Pages/ViewMoreDeactivatedIcon.png", UriKind.Relative));
+        }
+
+        private void ViewMoreInv0_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+
+        }
+
+        private void NotificationBell0_MouseEnter(object sender, MouseEventArgs e)
+        {
+            NotificationBell0.Source = new BitmapImage(new Uri("/Pages/NotificationBellIcon.png", UriKind.Relative));
+        }
+
+        private void NotificationBell0_MouseLeave(object sender, MouseEventArgs e)
+        {
+            NotificationBell0.Source = new BitmapImage(new Uri("/Pages/NotificationBellDeactivatedIcon.png", UriKind.Relative));
+        }
+
+        private void NotificationBell0_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+
+        }
+
+        private void CloseMenuBar_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            if(MenuGrid.Visibility == Visibility.Visible)
+            {
+                // hide the lateral menu
+                MenuGrid.Visibility = Visibility.Collapsed;
+                ShowArrow.Visibility = Visibility.Visible;
+                HideArrow.Visibility = Visibility.Collapsed;
+                MainPageContent.Width = 1200;
+            } else
+            {
+                // shows the lateral menu
+                MenuGrid.Visibility = Visibility.Visible;
+                ShowArrow.Visibility = Visibility.Collapsed;
+                HideArrow.Visibility = Visibility.Visible;
+                MainPageContent.Width = 900;
+            }
+        }
+
+        private void CloseMenuBar_MouseEnter(object sender, MouseEventArgs e)
+        {
+            var newcolor = new BrushConverter();
+            CloseMenuBar.Background = (Brush)newcolor.ConvertFrom("#142627cc");
+        }
+
+        private void CloseMenuBar_MouseLeave(object sender, MouseEventArgs e)
+        {
+            var newcolor = new BrushConverter();
+            CloseMenuBar.Background = (Brush)newcolor.ConvertFrom("#14262799");
+        }
     }
 }

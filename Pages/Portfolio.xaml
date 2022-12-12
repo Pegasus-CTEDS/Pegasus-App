@@ -15,10 +15,10 @@
                 <Label Name="WelcomeLabel"  Foreground="#FFFFFF" FontSize="16" HorizontalAlignment="Center"></Label>
             
             <StackPanel Orientation="Horizontal">
-                <Grid Width="250" Height="720" HorizontalAlignment="Left" Background="#1163ada8">
+                <Grid Name="MenuGrid" Visibility="Visible" Width="250" Height="720" HorizontalAlignment="Left" Background="#1163ada8">
                     <StackPanel>
                         <Label Margin="0,30,0,0" Foreground="#FFFFFF" HorizontalAlignment="Center" FontWeight="ExtraLight" FontSize="18">Bem-vindo, Marcos!</Label>
-                        <Ellipse Margin="0,30,0,50" Width="150" Height="150" Fill="#FFFFFF"></Ellipse>
+                        <Image Margin="0,30,0,50" Width="150" Height="150" Source="/Pages/UserIcon.png"></Image>
                         <Grid Name="MeuPerfilGrid" MouseLeftButtonDown="MeuPerfilGrid_MouseLeftButtonDown" MouseEnter="MeuPerfilGrid_MouseEnter" MouseLeave="MeuPerfilGrid_MouseLeave" Margin="0,0,0,20" Width="250" Height="60" VerticalAlignment="Center">
                             <Label Margin="0,0,0,0" Foreground="#FFFFFF" VerticalAlignment="Center" HorizontalAlignment="Center" FontWeight="ExtraLight" FontSize="16">Meu Perfil</Label>
                         </Grid>
@@ -34,29 +34,36 @@
                         <Grid Name="ConfiguracoesGrid" MouseEnter="ConfiguracoesGrid_MouseEnter" MouseLeave="ConfiguracoesGrid_MouseLeave" MouseLeftButtonDown="ConfiguracoesGrid_MouseLeftButtonDown" Margin="0,0,0,20" Width="250" Height="60" VerticalAlignment="Center">
                             <Label Margin="0,0,0,0" Foreground="#FFFFFF" VerticalAlignment="Center" HorizontalAlignment="Center" FontWeight="ExtraLight" FontSize="16">Configurações</Label>
                         </Grid>
+                        
 
                     </StackPanel>
+
+                    
                 </Grid>
-                <Grid Margin="60,0,0,0" Width="900" Height="620" Background="#0c2233">
+                <Grid Name="CloseMenuBar" Background="#142627cc" MouseEnter="CloseMenuBar_MouseEnter" MouseLeave="CloseMenuBar_MouseLeave" Height="300" Width="15" VerticalAlignment="Center" MouseLeftButtonDown="CloseMenuBar_MouseLeftButtonDown">
+                    <Image Name="HideArrow" Visibility="Visible" HorizontalAlignment="Center" Width="18" Height="18" Source="/Pages/HideArrow.png" ></Image>
+                    <Image Name="ShowArrow" Visibility="Collapsed" HorizontalAlignment="Center" Width="18" Height="18" Source="/Pages/ShowArrow.png" ></Image>
+                </Grid>
+                <Grid Name="MainPageContent" Margin="60,0,0,0" Width="900" Height="620" Background="#0c2233">
                     <StackPanel>
-                        <Label Margin="0,40,0,80" Foreground="#FFFFFF" FontSize="40" HorizontalAlignment="Center" FontWeight="ExtraLight" Content="Investimentos"/>
+                        <Label Margin="0,40,0,80" Foreground="#FFFFFF" FontSize="40" HorizontalAlignment="Center" FontWeight="ExtraLight" Content="Minha Carteira"/>
                     </StackPanel>
-                    <ScrollViewer>
+                    <ScrollViewer BorderBrush="Aqua" Foreground="Azure">
                         <StackPanel Margin="0,140,0,0">
-                            <Grid Margin="0,0,0,10" Width="800" Height="90" Background="#1163ada8" VerticalAlignment="Center">
-                                <Label Margin="10,0,0,0" Foreground="#FFFFFF" FontSize="18" FontWeight="ExtraLight">ASAI3</Label>
-                                <Label Margin="10,20,0,0" Foreground="#FFFFFF" FontSize="18" FontWeight="ExtraLight">Valor:</Label>
-                                <Label Margin="10,20,0,0" Foreground="#FFFFFF" FontSize="18" FontWeight="ExtraLight">Valor:</Label>
-                            </Grid>
-                            <Grid Margin="0,0,0,10" Width="800" Height="90" Background="#1163ada8" VerticalAlignment="Center">
-                                <Label Margin="10,0,0,0" Foreground="#FFFFFF" FontSize="18" FontWeight="ExtraLight">ASAI3</Label>
-                                <Label Margin="10,20,0,0" Foreground="#FFFFFF" FontSize="18" FontWeight="ExtraLight">Valor:</Label>
-                                <Label Margin="10,20,0,0" Foreground="#FFFFFF" FontSize="18" FontWeight="ExtraLight">Valor:</Label>
-                            </Grid>
-                            <Grid Margin="0,0,0,10" Width="800" Height="90" Background="#1163ada8" VerticalAlignment="Center">
-                                <Label Margin="10,0,0,0" Foreground="#FFFFFF" FontSize="18" FontWeight="ExtraLight">ASAI3</Label>
-                                <Label Margin="10,20,0,0" Foreground="#FFFFFF" FontSize="18" FontWeight="ExtraLight">Valor:</Label>
-                                <Label Margin="10,20,0,0" Foreground="#FFFFFF" FontSize="18" FontWeight="ExtraLight">Valor:</Label>
+                            <Grid Margin="0,0,0,10" Width="800" Height="100" Background="#1163ada8" VerticalAlignment="Center">
+                                <StackPanel Orientation="Horizontal">
+
+                                    <StackPanel Orientation="Vertical">
+                                        <Label Margin="30,0,0,0" Foreground="#FFFFFF" FontSize="22" FontWeight="ExtraLight">Poupança Nubank</Label>
+                                        <Label Margin="30,00,0,0" Foreground="#FFFFFF" FontSize="14" FontStyle="Italic" FontWeight="ExtraLight">Saldo: R$ 3.560,33</Label>
+                                        <Label Margin="30,00,0,0" Foreground="#FFFFFF" FontSize="14" FontStyle="Italic" FontWeight="ExtraLight">Rendimento: +4,32%</Label>
+                                    </StackPanel>
+                                    <StackPanel Margin="500,8,0,0" Orientation="Vertical">
+                                        <Image Name="ViewMoreInv0" Width="40" Height="40" MouseEnter="ViewMoreInv0_MouseEnter" MouseLeave="ViewMoreInv0_MouseLeave" MouseLeftButtonDown="ViewMoreInv0_MouseLeftButtonDown" Source="/Pages/ViewMoreDeactivatedIcon.png"></Image>
+                                        <Image Name="NotificationBell0" Width="40" Height="40" MouseEnter="NotificationBell0_MouseEnter" MouseLeave="NotificationBell0_MouseLeave" MouseLeftButtonDown="NotificationBell0_MouseLeftButtonDown" Source="/Pages/NotificationBellIcon.png"></Image>
+                                    </StackPanel>
+                                </StackPanel>
+                                
                             </Grid>
 
                         </StackPanel>
