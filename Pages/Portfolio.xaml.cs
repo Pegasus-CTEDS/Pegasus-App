@@ -139,11 +139,6 @@ namespace Pegasus_App.Pages
 
         }
 
-        private void ViewMoreInv0_MouseEnter(object sender, MouseEventArgs e)
-        {
-            ViewMoreInv0.Source = new BitmapImage(new Uri("/Pages/ViewMoreActivatedIcon.png", UriKind.Relative));
-        }
-
         private void ViewMoreInv0_MouseLeave(object sender, MouseEventArgs e)
         {
             //ViewMoreInv0.Source = new BitmapImage(new Uri("/Pages/ViewMoreDeactivatedIcon.png", UriKind.Relative));
@@ -152,16 +147,6 @@ namespace Pegasus_App.Pages
         private void ViewMoreInv0_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
 
-        }
-
-        private void NotificationBell0_MouseEnter(object sender, MouseEventArgs e)
-        {
-            NotificationBell0.Source = new BitmapImage(new Uri("/Pages/NotificationBellIcon.png", UriKind.Relative));
-        }
-
-        private void NotificationBell0_MouseLeave(object sender, MouseEventArgs e)
-        {
-            NotificationBell0.Source = new BitmapImage(new Uri("/Pages/NotificationBellDeactivatedIcon.png", UriKind.Relative));
         }
 
         private void NotificationBell0_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)

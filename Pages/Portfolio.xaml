@@ -44,28 +44,31 @@
                     <Image Name="HideArrow" Visibility="Visible" HorizontalAlignment="Center" Width="18" Height="18" Source="/Pages/HideArrow.png" ></Image>
                     <Image Name="ShowArrow" Visibility="Collapsed" HorizontalAlignment="Center" Width="18" Height="18" Source="/Pages/ShowArrow.png" ></Image>
                 </Grid>
+                
                 <Grid Name="MainPageContent" Margin="60,0,0,0" Width="900" Height="620" Background="#0c2233">
                     <StackPanel>
                         <Label Margin="0,40,0,80" Foreground="#FFFFFF" FontSize="40" HorizontalAlignment="Center" FontWeight="ExtraLight" Content="Minha Carteira"/>
                     </StackPanel>
                     <ScrollViewer BorderBrush="Aqua" Foreground="Azure">
                         <StackPanel Margin="0,140,0,0">
-                            <Grid Margin="0,0,0,10" Width="800" Height="100" Background="#1163ada8" VerticalAlignment="Center">
+                            <Grid Margin="0,0,0,5" Width="800" Height="100" Background="#1163ada8">
                                 <StackPanel Orientation="Horizontal">
-
-                                    <StackPanel Orientation="Vertical">
-                                        <Label Margin="30,0,0,0" Foreground="#FFFFFF" FontSize="22" FontWeight="ExtraLight">Poupança Nubank</Label>
-                                        <Label Margin="30,00,0,0" Foreground="#FFFFFF" FontSize="14" FontStyle="Italic" FontWeight="ExtraLight">Saldo: R$ 3.560,33</Label>
-                                        <Label Margin="30,00,0,0" Foreground="#FFFFFF" FontSize="14" FontStyle="Italic" FontWeight="ExtraLight">Rendimento: +4,32%</Label>
-                                    </StackPanel>
-                                    <StackPanel Margin="500,8,0,0" Orientation="Vertical">
-                                        <Image Name="ViewMoreInv0" Width="40" Height="40" MouseEnter="ViewMoreInv0_MouseEnter" MouseLeave="ViewMoreInv0_MouseLeave" MouseLeftButtonDown="ViewMoreInv0_MouseLeftButtonDown" Source="/Pages/ViewMoreDeactivatedIcon.png"></Image>
-                                        <Image Name="NotificationBell0" Width="40" Height="40" MouseEnter="NotificationBell0_MouseEnter" MouseLeave="NotificationBell0_MouseLeave" MouseLeftButtonDown="NotificationBell0_MouseLeftButtonDown" Source="/Pages/NotificationBellIcon.png"></Image>
-                                    </StackPanel>
+                                    <Image Margin="20,0,0,0" Width="80" Source="/Pages/AmountIcon.png"></Image>
+                                    <Label Name="BalanceLabel" Foreground="#FFFFFF" Margin="20,0,0,0" VerticalAlignment="Center" FontSize="26" FontWeight="ExtraLight" Content="Saldo: R$ 45.232,98"></Label>
                                 </StackPanel>
-                                
+                                </Grid>
+                            <Grid Margin="0,0,0,5" Width="800" Height="100" Background="#1163ada8">
+                                <StackPanel Orientation="Horizontal">
+                                    <Image Margin="20,0,0,0" Width="80" Source="/Pages/BalanceIcon.png"></Image>
+                                    <Label Name="InvestedLabel" Foreground="#FFFFFF" Margin="20,0,0,0" VerticalAlignment="Center" FontSize="26" FontWeight="ExtraLight" Content="Rendimento: +4,57%"></Label>
+                                </StackPanel>
+                                </Grid>
+                            <Grid Margin="0,00,0,5" Width="800" Height="100" Background="#1163ada8">
+                                <StackPanel Orientation="Horizontal">
+                                    <Image Margin="20,0,0,0" Width="80" Source="/Pages/YieldIcon.png"></Image>
+                                    <Label x:Name="YieldLabel" Foreground="#FFFFFF" Margin="20,0,0,0" VerticalAlignment="Center" FontSize="26" FontWeight="ExtraLight" Content="Variação: +4,57%"></Label>
+                                </StackPanel>
                             </Grid>
-
                         </StackPanel>
                     </ScrollViewer>
                     
