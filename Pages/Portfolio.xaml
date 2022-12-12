@@ -44,13 +44,14 @@
                     <Image Name="HideArrow" Visibility="Visible" HorizontalAlignment="Center" Width="18" Height="18" Source="/Pages/HideArrow.png" ></Image>
                     <Image Name="ShowArrow" Visibility="Collapsed" HorizontalAlignment="Center" Width="18" Height="18" Source="/Pages/ShowArrow.png" ></Image>
                 </Grid>
-                
+
                 <Grid Name="MainPageContent" Margin="60,0,0,0" Width="900" Height="620" Background="#0c2233">
-                    <StackPanel>
-                        <Label Margin="0,40,0,80" Foreground="#FFFFFF" FontSize="40" HorizontalAlignment="Center" FontWeight="ExtraLight" Content="Minha Carteira"/>
-                    </StackPanel>
                     <ScrollViewer BorderBrush="Aqua" Foreground="Azure">
-                        <StackPanel Margin="0,140,0,0">
+                        <StackPanel Margin="0,0,0,0">
+                            <Label Margin="0,40,0,40" Foreground="#FFFFFF" FontSize="40" HorizontalAlignment="Center" FontWeight="ExtraLight" Content="Minha Carteira"/>
+
+                            
+
                             <Grid Margin="0,0,0,5" Width="800" Height="100" Background="#1163ada8">
                                 <StackPanel Orientation="Horizontal">
                                     <Image Margin="20,0,0,0" Width="80" Source="/Pages/AmountIcon.png"></Image>
@@ -58,9 +59,9 @@
                                         <Label Foreground="#FFFFFF" VerticalAlignment="Center" FontSize="26" FontWeight="ExtraLight" Content="Saldo:"></Label>
                                         <Label Name="BalanceLabel" Foreground="#FFFFFF" VerticalAlignment="Center" FontSize="18" FontStyle="Italic" FontWeight="ExtraLight" Content="R$ 45.232,98"></Label>
                                     </StackPanel>
-                                    
+
                                 </StackPanel>
-                                </Grid>
+                            </Grid>
                             <Grid Margin="0,0,0,5" Width="800" Height="100" Background="#1163ada8">
                                 <StackPanel Orientation="Horizontal">
                                     <Image Margin="20,0,0,0" Width="80" Source="/Pages/BalanceIcon.png"></Image>
@@ -69,7 +70,7 @@
                                         <Label Foreground="#FFFFFF" VerticalAlignment="Center" FontSize="18" FontStyle="Italic" FontWeight="ExtraLight" Content="R$ 45.232,98"></Label>
                                     </StackPanel>
                                 </StackPanel>
-                                </Grid>
+                            </Grid>
                             <Grid Margin="0,00,0,5" Width="800" Height="100" Background="#1163ada8">
                                 <StackPanel Orientation="Horizontal">
                                     <Image Margin="20,0,0,0" Width="80" Source="/Pages/YieldIcon.png"></Image>
@@ -85,7 +86,28 @@
                                         <Label Foreground="#FFFFFF" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="18" FontWeight="ExtraLight" Content="Ver Carteira"></Label>
                                     </StackPanel>
                                 </StackPanel>
+                                
                             </Grid>
+                            <Label HorizontalAlignment="Center" FontSize="40" Foreground="#FFFFFF" FontWeight="ExtraLight">Meus Investimentos</Label>
+                            <Grid Margin="0,00,0,5" Width="800" VerticalAlignment="Center" Height="100" Background="#1163ada8">
+                                <StackPanel Orientation="Horizontal">
+                                    <StackPanel Margin="20,0,0,0" VerticalAlignment="Center" Orientation="Vertical">
+                                        <Label Foreground="#FFFFFF" VerticalAlignment="Center" FontSize="22" FontWeight="ExtraLight" Content="Poupança Itaú"></Label>
+                                        <Label Foreground="#FFFFFF" VerticalAlignment="Center" FontSize="16" FontStyle="Italic" FontWeight="ExtraLight" Content="Investido: RS 12.459,72"></Label>
+                                        <Label Foreground="#FFFFFF" VerticalAlignment="Center" FontSize="16" FontStyle="Italic" FontWeight="ExtraLight" Content="Ganhos: RS 1.432,11"></Label>
+                                    </StackPanel>
+                                </StackPanel>
+                            </Grid>
+                            <Grid Margin="0,00,0,5" Width="800" VerticalAlignment="Center" Height="100" Background="#1163ada8">
+                                <StackPanel Orientation="Horizontal">
+                                    <StackPanel Margin="20,0,0,0" VerticalAlignment="Center" Orientation="Vertical">
+                                        <Label Foreground="#FFFFFF" VerticalAlignment="Center" FontSize="22" FontWeight="ExtraLight" Content="Tesouro Direto"></Label>
+                                        <Label Foreground="#FFFFFF" VerticalAlignment="Center" FontSize="16" FontStyle="Italic" FontWeight="ExtraLight" Content="Investido: RS 2.107,29"></Label>
+                                        <Label Foreground="#FFFFFF" VerticalAlignment="Center" FontSize="16" FontStyle="Italic" FontWeight="ExtraLight" Content="Ganhos: RS 204,12"></Label>
+                                    </StackPanel>
+                                </StackPanel>
+                            </Grid>
+                            <Label HorizontalAlignment="Center" FontSize="40" Foreground="#FFFFFF" FontWeight="ExtraLight">Minhas Ações</Label>
                         </StackPanel>
                     </ScrollViewer>
                     
