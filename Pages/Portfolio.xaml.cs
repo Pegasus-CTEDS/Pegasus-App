@@ -220,5 +220,131 @@ namespace Pegasus_App.Pages
             var newcolor = new BrushConverter();
             RendimentoGrid.Background = (Brush)newcolor.ConvertFrom("#1163ada8");
         }
+
+
+
+
+        private void GridInvestimento0_MouseEnter(object sender, MouseEventArgs e)
+        {
+            var newcolor = new BrushConverter();
+            GridInvestimento0.Background = (Brush)newcolor.ConvertFrom("#11FFFFFF");
+        }
+
+        private void GridInvestimento0_MouseLeave(object sender, MouseEventArgs e)
+        {
+            var newcolor = new BrushConverter();
+            GridInvestimento0.Background = (Brush)newcolor.ConvertFrom("#1163ada8");
+        }
+
+        private void GridInvestimentos1_MouseEnter(object sender, MouseEventArgs e)
+        {
+            var newcolor = new BrushConverter();
+            GridInvestimentos1.Background = (Brush)newcolor.ConvertFrom("#11FFFFFF");
+        }
+
+        private void GridInvestimentos1_MouseLeave(object sender, MouseEventArgs e)
+        {
+            var newcolor = new BrushConverter();
+            GridInvestimentos1.Background = (Brush)newcolor.ConvertFrom("#1163ada8");
+        }
+
+        private void GridInvestimentos2_MouseEnter(object sender, MouseEventArgs e)
+        {
+            var newcolor = new BrushConverter();
+            GridInvestimentos2.Background = (Brush)newcolor.ConvertFrom("#11FFFFFF");
+        }
+
+        private void GridInvestimentos2_MouseLeave(object sender, MouseEventArgs e)
+        {
+            var newcolor = new BrushConverter();
+            GridInvestimentos2.Background = (Brush)newcolor.ConvertFrom("#1163ada8");
+        }
+
+        private void VerCarteira_MouseEnter(object sender, MouseEventArgs e)
+        {
+            var newcolor = new BrushConverter();
+            VerCarteira.Background = (Brush)newcolor.ConvertFrom("#11FFFFFF");
+        }
+
+        private void VerCarteira_MouseLeave(object sender, MouseEventArgs e)
+        {
+            var newcolor = new BrushConverter();
+            VerCarteira.Background = (Brush)newcolor.ConvertFrom("#1163ada8");
+        }
+
+        private void VerCarteira_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+
+        }
+
+        private void VerInvestimentos_MouseEnter(object sender, MouseEventArgs e)
+        {
+            var newcolor = new BrushConverter();
+            VerInvestimentos.Background = (Brush)newcolor.ConvertFrom("#11FFFFFF");
+        }
+
+        private void VerInvestimentos_MouseLeave(object sender, MouseEventArgs e)
+        {
+            var newcolor = new BrushConverter();
+            VerInvestimentos.Background = (Brush)newcolor.ConvertFrom("#1163ada8");
+        }
+
+        private void VerInvestimentos_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+
+        }
+
+        private void GridAcao0_MouseEnter(object sender, MouseEventArgs e)
+        {
+            var newcolor = new BrushConverter();
+            GridAcao0.Background = (Brush)newcolor.ConvertFrom("#11FFFFFF");
+        }
+
+        private void GridAcao0_MouseLeave(object sender, MouseEventArgs e)
+        {
+            var newcolor = new BrushConverter();
+            GridAcao0.Background = (Brush)newcolor.ConvertFrom("#1163ada8");
+        }
+
+        private void GridAcao1_MouseEnter(object sender, MouseEventArgs e)
+        {
+            var newcolor = new BrushConverter();
+            GridAcao1.Background = (Brush)newcolor.ConvertFrom("#11FFFFFF");
+        }
+
+        private void GridAcao1_MouseLeave(object sender, MouseEventArgs e)
+        {
+            var newcolor = new BrushConverter();
+            GridAcao1.Background = (Brush)newcolor.ConvertFrom("#1163ada8");
+        }
+
+        private void GridAcao2_MouseEnter(object sender, MouseEventArgs e)
+        {
+            var newcolor = new BrushConverter();
+            GridAcao2.Background = (Brush)newcolor.ConvertFrom("#11FFFFFF");
+        }
+
+        private void GridAcao2_MouseLeave(object sender, MouseEventArgs e)
+        {
+            var newcolor = new BrushConverter();
+            GridAcao2.Background = (Brush)newcolor.ConvertFrom("#1163ada8");
+        }
+
+        private void VerAcoes_MouseEnter(object sender, MouseEventArgs e)
+        {
+            var newcolor = new BrushConverter();
+            VerAcoes.Background = (Brush)newcolor.ConvertFrom("#11FFFFFF");
+        }
+
+        private void VerAcoes_MouseLeave(object sender, MouseEventArgs e)
+        {
+            var newcolor = new BrushConverter();
+            VerAcoes.Background = (Brush)newcolor.ConvertFrom("#1163ada8");
+        }
+
+        private void VerAcoes_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+
+        }
     }
 }
