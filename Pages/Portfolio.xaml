@@ -8,12 +8,18 @@
       ShowsNavigationUI="False"
       d:DesignHeight="720" d:DesignWidth="1280"
       Title="Operations">
-    
+
     <Grid>
-        <Grid Background="#001423">
-           
-                <Label Name="WelcomeLabel"  Foreground="#FFFFFF" FontSize="16" HorizontalAlignment="Center"></Label>
-            
+        <Grid>
+            <Grid.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF001423" Offset="0.004"/>
+                    <GradientStop Color="#FF01192B" Offset="1"/>
+                </LinearGradientBrush>
+            </Grid.Background>
+
+            <Label Name="WelcomeLabel"  Foreground="#FFFFFF" FontSize="16" HorizontalAlignment="Center"></Label>
+
             <StackPanel Orientation="Horizontal">
                 <Grid Name="MenuGrid" Visibility="Visible" Width="250" Height="720" HorizontalAlignment="Left" Background="#1163ada8">
                     <StackPanel Margin="0,30,0,0">
@@ -35,11 +41,11 @@
                         <Grid Name="ConfiguracoesGrid" MouseEnter="ConfiguracoesGrid_MouseEnter" MouseLeave="ConfiguracoesGrid_MouseLeave" MouseLeftButtonDown="ConfiguracoesGrid_MouseLeftButtonDown" Margin="0,0,0,20" Width="250" Height="60" VerticalAlignment="Center">
                             <Label Margin="0,0,0,0" Foreground="#FFFFFF" VerticalAlignment="Center" HorizontalAlignment="Center" FontWeight="ExtraLight" FontSize="18">Configurações</Label>
                         </Grid>
-                        
+
 
                     </StackPanel>
 
-                    
+
                 </Grid>
                 <Grid Name="CloseMenuBar" Background="#142627cc" MouseEnter="CloseMenuBar_MouseEnter" MouseLeave="CloseMenuBar_MouseLeave" Height="300" Width="15" VerticalAlignment="Center" MouseLeftButtonDown="CloseMenuBar_MouseLeftButtonDown">
                     <Image Name="HideArrow" Visibility="Visible" HorizontalAlignment="Center" Width="18" Height="18" Source="/Pages/HideArrow.png" ></Image>
@@ -60,7 +66,13 @@
                         </Grid>
                     </StackPanel>
                     <Grid Name="MainPageContent" Margin="0,30,0,0" Width="900" Height="600" Background="#0c2233">
-                        <ScrollViewer Name="ResumoCarteira" Visibility="Visible" BorderBrush="Aqua" Foreground="Azure">
+                        <ScrollViewer Name="ResumoCarteira" Visibility="Visible" >
+                            <ScrollViewer.Background>
+                                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                    <GradientStop Color="#0c2233"/>
+                                    <GradientStop Color="#FF0A283E" Offset="1"/>
+                                </LinearGradientBrush>
+                            </ScrollViewer.Background>
                             <StackPanel Margin="0,0,0,0">
                                 <Label Margin="0,40,0,40" Foreground="#FFFFFF" FontSize="40" HorizontalAlignment="Center" FontWeight="ExtraLight" Content="Minha Carteira"/>
 
@@ -176,16 +188,34 @@
                                 </Grid>
                             </StackPanel>
                         </ScrollViewer>
+                        <ScrollViewer Name="PainelInvestmentos" Visibility="Collapsed">
+                            <ScrollViewer.Background>
+                                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                    <GradientStop Color="#0c2233"/>
+                                    <GradientStop Color="#FF0A283E" Offset="1"/>
+                                </LinearGradientBrush>
+                            </ScrollViewer.Background>
+                            <StackPanel Name="PainelInvestimentosStack">
+                                <Grid Name="BotaoVoltar" Margin="10,10,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="150" Height="30" Background="#1163ada8" MouseEnter="BotaoVoltar_MouseEnter" MouseLeave="BotaoVoltar_MouseLeave" MouseLeftButtonDown="BotaoVoltar_MouseLeftButtonDown">
+                                    <Label HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#FFFFFF" FontWeight="ExtraLight" FontSize="16" >Voltar</Label>
+                                </Grid>
+                                <Label Margin="0,0,0,40" Foreground="#FFFFFF" FontWeight="ExtraLight" FontSize="40" HorizontalAlignment="Center">Meus Investimentos</Label>
+                                <Label Margin="20,0,0,40" Foreground="#FFFFFF" FontWeight="ExtraLight" FontSize="18">Investimento 1</Label>
+                                <Label Margin="20,0,0,40" Foreground="#FFFFFF" FontWeight="ExtraLight" FontSize="18">Investimento 1</Label>
+                                <Label Margin="20,0,0,40" Foreground="#FFFFFF" FontWeight="ExtraLight" FontSize="18">Investimento 1</Label>
 
+                            </StackPanel>
+
+                        </ScrollViewer>
                     </Grid>
-                    
-                    
+
+
                 </StackPanel>
-               
-                
+
+
             </StackPanel>
         </Grid>
-        
+
     </Grid>
 </Page>
 

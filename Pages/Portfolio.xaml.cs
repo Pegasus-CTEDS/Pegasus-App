@@ -291,7 +291,8 @@ namespace Pegasus_App.Pages
 
         private void VerInvestimentos_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-
+            ResumoCarteira.Visibility = Visibility.Collapsed;
+            PainelInvestmentos.Visibility = Visibility.Visible;
         }
 
         private void GridAcao0_MouseEnter(object sender, MouseEventArgs e)
@@ -345,6 +346,22 @@ namespace Pegasus_App.Pages
         private void VerAcoes_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
 
+        }
+
+        private void BotaoVoltar_MouseEnter(object sender, MouseEventArgs e)
+        {
+
+        }
+
+        private void BotaoVoltar_MouseLeave(object sender, MouseEventArgs e)
+        {
+
+        }
+
+        private void BotaoVoltar_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            PainelInvestmentos.Visibility = Visibility.Collapsed;
+            ResumoCarteira.Visibility = Visibility.Visible;
         }
     }
 }
