@@ -184,5 +184,41 @@ namespace Pegasus_App.Pages
             var newcolor = new BrushConverter();
             CloseMenuBar.Background = (Brush)newcolor.ConvertFrom("#14262799");
         }
+
+        private void SaldoGrid_MouseEnter(object sender, MouseEventArgs e)
+        {
+            var newcolor = new BrushConverter();
+            SaldoGrid.Background = (Brush)newcolor.ConvertFrom("#11FFFFFF");
+        }
+
+        private void SaldoGrid_MouseLeave(object sender, MouseEventArgs e)
+        {
+            var newcolor = new BrushConverter();
+            SaldoGrid.Background = (Brush)newcolor.ConvertFrom("#1163ada8");
+        }
+
+        private void GanhosGrid_MouseEnter(object sender, MouseEventArgs e)
+        {
+            var newcolor = new BrushConverter();
+            GanhosGrid.Background = (Brush)newcolor.ConvertFrom("#11FFFFFF");
+        }
+
+        private void GanhosGrid_MouseLeave(object sender, MouseEventArgs e)
+        {
+            var newcolor = new BrushConverter();
+            GanhosGrid.Background = (Brush)newcolor.ConvertFrom("#1163ada8");
+        }
+
+        private void RendimentoGrid_MouseEnter(object sender, MouseEventArgs e)
+        {
+            var newcolor = new BrushConverter();
+            RendimentoGrid.Background = (Brush)newcolor.ConvertFrom("#11FFFFFF");
+        }
+
+        private void RendimentoGrid_MouseLeave(object sender, MouseEventArgs e)
+        {
+            var newcolor = new BrushConverter();
+            RendimentoGrid.Background = (Brush)newcolor.ConvertFrom("#1163ada8");
+        }
     }
 }

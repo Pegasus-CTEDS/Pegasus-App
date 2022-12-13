@@ -21,7 +21,10 @@
     <None Remove="Pages\AmountIcon.png" />
     <None Remove="Pages\BalanceIcon.png" />
     <None Remove="Pages\HideArrow.png" />
+    <None Remove="Pages\Logo.png" />
+    <None Remove="Pages\MessageIcon.png" />
     <None Remove="Pages\NotificationBellIcon.png" />
+    <None Remove="Pages\SearchIcon.png" />
     <None Remove="Pages\ShowArrow.png" />
     <None Remove="Pages\ShowHideArrow.png" />
     <None Remove="Pages\UserIcon.png" />
@@ -49,7 +52,10 @@
     <Resource Include="Pages\AmountIcon.png" />
     <Resource Include="Pages\BalanceIcon.png" />
     <Resource Include="Pages\HideArrow.png" />
+    <Resource Include="Pages\Logo.png" />
+    <Resource Include="Pages\MessageIcon.png" />
     <Resource Include="Pages\NotificationBellIcon.png" />
+    <Resource Include="Pages\SearchIcon.png" />
     <Resource Include="Pages\ShowArrow.png" />
     <Resource Include="Pages\UserIcon.png" />
     <Resource Include="Pages\ViewMoreDeactivatedIcon.png" />
