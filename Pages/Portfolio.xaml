@@ -124,7 +124,59 @@
                                         </StackPanel>
                                     </StackPanel>
                                 </Grid>
+                                <Grid Margin="0,00,0,5" Width="800" VerticalAlignment="Center" Height="100" Background="#1163ada8">
+                                    <StackPanel Orientation="Horizontal">
+                                        <StackPanel Margin="20,0,0,0" VerticalAlignment="Center" Orientation="Vertical">
+                                            <Label Foreground="#FFFFFF" VerticalAlignment="Center" FontSize="22" FontWeight="ExtraLight" Content="Dividendos"></Label>
+                                            <Label Foreground="#FFFFFF" VerticalAlignment="Center" FontSize="16" FontStyle="Italic" FontWeight="ExtraLight" Content="Investido: RS 2.107,29"></Label>
+                                            <Label Foreground="#FFFFFF" VerticalAlignment="Center" FontSize="16" FontStyle="Italic" FontWeight="ExtraLight" Content="Ganhos: RS 204,12"></Label>
+                                        </StackPanel>
+                                    </StackPanel>
+                                </Grid>
+                                <Grid Margin="600,10,0,0" Width="200" Height="50" HorizontalAlignment="Center" Background="#1163ada8">
+                                    <StackPanel Orientation="Horizontal">
+                                        <StackPanel Margin="30,0,0,0" VerticalAlignment="Center" Orientation="Vertical">
+                                            <Label Foreground="#FFFFFF" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="18" FontWeight="ExtraLight" Content="Ver Investimentos"></Label>
+                                        </StackPanel>
+                                    </StackPanel>
+
+                                </Grid>
                                 <Label HorizontalAlignment="Center" FontSize="40" Foreground="#FFFFFF" FontWeight="ExtraLight">Minhas Ações</Label>
+                                <Grid Margin="0,00,0,5" Width="800" VerticalAlignment="Center" Height="100" Background="#1163ada8">
+                                    <StackPanel Orientation="Horizontal">
+                                        <StackPanel Margin="20,0,0,0" VerticalAlignment="Center" Orientation="Vertical">
+                                            <Label Foreground="#FFFFFF" VerticalAlignment="Center" FontSize="22" FontWeight="ExtraLight" Content="Dividendos"></Label>
+                                            <Label Foreground="#FFFFFF" VerticalAlignment="Center" FontSize="16" FontStyle="Italic" FontWeight="ExtraLight" Content="Investido: RS 2.107,29"></Label>
+                                            <Label Foreground="#FFFFFF" VerticalAlignment="Center" FontSize="16" FontStyle="Italic" FontWeight="ExtraLight" Content="Ganhos: RS 204,12"></Label>
+                                        </StackPanel>
+                                    </StackPanel>
+                                </Grid>
+                                <Grid Margin="0,00,0,5" Width="800" VerticalAlignment="Center" Height="100" Background="#1163ada8">
+                                    <StackPanel Orientation="Horizontal">
+                                        <StackPanel Margin="20,0,0,0" VerticalAlignment="Center" Orientation="Vertical">
+                                            <Label Foreground="#FFFFFF" VerticalAlignment="Center" FontSize="22" FontWeight="ExtraLight" Content="Dividendos"></Label>
+                                            <Label Foreground="#FFFFFF" VerticalAlignment="Center" FontSize="16" FontStyle="Italic" FontWeight="ExtraLight" Content="Investido: RS 2.107,29"></Label>
+                                            <Label Foreground="#FFFFFF" VerticalAlignment="Center" FontSize="16" FontStyle="Italic" FontWeight="ExtraLight" Content="Ganhos: RS 204,12"></Label>
+                                        </StackPanel>
+                                    </StackPanel>
+                                </Grid>
+                                <Grid Margin="0,00,0,5" Width="800" VerticalAlignment="Center" Height="100" Background="#1163ada8">
+                                    <StackPanel Orientation="Horizontal">
+                                        <StackPanel Margin="20,0,0,0" VerticalAlignment="Center" Orientation="Vertical">
+                                            <Label Foreground="#FFFFFF" VerticalAlignment="Center" FontSize="22" FontWeight="ExtraLight" Content="Dividendos"></Label>
+                                            <Label Foreground="#FFFFFF" VerticalAlignment="Center" FontSize="16" FontStyle="Italic" FontWeight="ExtraLight" Content="Investido: RS 2.107,29"></Label>
+                                            <Label Foreground="#FFFFFF" VerticalAlignment="Center" FontSize="16" FontStyle="Italic" FontWeight="ExtraLight" Content="Ganhos: RS 204,12"></Label>
+                                        </StackPanel>
+                                    </StackPanel>
+                                </Grid>
+                                <Grid Margin="600,10,0,20" Width="200" Height="50" HorizontalAlignment="Center" Background="#1163ada8">
+                                    <StackPanel Orientation="Horizontal">
+                                        <StackPanel Margin="30,0,0,0" VerticalAlignment="Center" Orientation="Vertical">
+                                            <Label Foreground="#FFFFFF" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="18" FontWeight="ExtraLight" Content="Ver Ações"></Label>
+                                        </StackPanel>
+                                    </StackPanel>
+
+                                </Grid>
                             </StackPanel>
                         </ScrollViewer>
 
