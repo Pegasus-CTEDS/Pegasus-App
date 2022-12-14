@@ -27,6 +27,81 @@ namespace Pegasus_App.Pages
             InitializeComponent();
             background_left_grid = MeuPerfilGrid.Background;
             LoadPortfolioDataGridView();
+            LoadAssets();
+        }
+
+        void LoadAssets()
+        {
+            MinhasAcoesPanel.Children.Add(AssetGrid("ASAI3", "ASSAÍ", 4, 6, 5));
+            MinhasAcoesPanel.Children.Add(AssetGrid("MALU3", "MAGAZINE LUÍZA", 4, 5, 5));
+        }
+        public Grid AssetGrid(string asset_name, string comercial_name, double price, double amount, double variation)
+        {
+            Grid asset = new Grid();
+            var newcolor = new BrushConverter();
+
+            asset.Width = 800;
+            asset.Height = 80;
+            asset.Name = asset_name;
+            asset.Margin = margin(0,0,0,10);
+            
+            asset.Background = (Brush)newcolor.ConvertFrom("#1163ada8");
+
+            StackPanel AssetContent = new StackPanel();
+            AssetContent.Orientation = Orientation.Horizontal;
+
+            StackPanel AssetNamePanel = new StackPanel();
+            StackPanel PricePanel = new StackPanel();
+            StackPanel InvestedPanel = new StackPanel();
+            StackPanel VariationPanel = new StackPanel();
+
+            asset.Children.Add(AssetContent);
+            AssetContent.Children.Add(AssetNamePanel);
+            AssetContent.Children.Add(PricePanel);
+            AssetContent.Children.Add(InvestedPanel);
+            AssetContent.Children.Add(VariationPanel);
+
+            Thickness margin(double left, double top, double right, double bottom)
+            {
+                Thickness mg = new Thickness();
+                mg.Left = left;
+                mg.Top = top;
+                mg.Right = right;
+                mg.Bottom = bottom;
+                return mg;
+            }
+
+            Label lb(string content, double size, FontStyle fs, FontWeight fw)
+            {
+                Label lb = new Label();
+                lb.Foreground = (Brush)newcolor.ConvertFrom("#FFFFFFFF");
+                lb.FontWeight = fw;
+                lb.FontStyle = fs;
+                lb.FontSize = size;
+                lb.Content = content;
+                return lb;
+            }
+
+            AssetContent.Margin = margin(0, 0, 0, 0);
+            AssetNamePanel.Margin = margin(20, 0, 80, 0);
+            PricePanel.Margin = margin(60, 0, 0, 0);
+            InvestedPanel.Margin = margin(60, 0, 0, 0);
+            VariationPanel.Margin = margin(60, 0, 0, 0);
+
+            AssetNamePanel.Children.Add(lb(asset_name, 26, FontStyles.Normal, FontWeights.Medium));
+            AssetNamePanel.Children.Add(lb(comercial_name, 20, FontStyles.Italic, FontWeights.ExtraLight));
+            AssetNamePanel.Width = 200;
+
+            PricePanel.Children.Add(lb("valor", 26, FontStyles.Italic, FontWeights.ExtraLight));
+            PricePanel.Children.Add(lb($"R$ {price}", 20, FontStyles.Italic, FontWeights.ExtraLight));
+
+            InvestedPanel.Children.Add(lb("investido", 26, FontStyles.Italic, FontWeights.ExtraLight));
+            InvestedPanel.Children.Add(lb($"R$ {amount}", 20, FontStyles.Italic, FontWeights.ExtraLight));
+
+            VariationPanel.Children.Add(lb("variação", 26, FontStyles.Italic, FontWeights.ExtraLight));
+            VariationPanel.Children.Add(lb($"{variation}%", 20, FontStyles.Italic, FontWeights.ExtraLight));
+
+            return asset;
         }
 
         void LoadPortfolioDataGridView()
