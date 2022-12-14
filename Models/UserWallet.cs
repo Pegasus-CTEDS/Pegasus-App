@@ -31,6 +31,19 @@ namespace Pegasus_App.Models
             UserAssets.Add(new Asset("PETR4", "PETROBRAS PN N2", 23.32, 2013.21, -2.46));
             UserAssets.Add(new Asset("AMBEV3", "AMBV S/ A ON", 15.28, 2013.21, 0.26));
             UserAssets.Add(new Asset("BBAS3", "BRASIL ON EJ NM", 31.86, 2013.21, -4.88));
+            ComputeGlobalMetrics();
+        }
+        public static void ComputeGlobalMetrics()
+        {
+            Amount = 0;
+            Balance = 0;
+            Yield = 0;
+            foreach(var asset in UserAssets)
+            {
+                Amount += asset.Invested;
+                Balance += 0;
+                Yield += 0;
+            }
         }
         /// <summary>
         /// list of all the assets owned by the user

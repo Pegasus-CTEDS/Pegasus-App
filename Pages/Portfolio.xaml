@@ -18,12 +18,10 @@
                 </LinearGradientBrush>
             </Grid.Background>
 
-            <Label Name="WelcomeLabel"  Foreground="#FFFFFF" FontSize="16" HorizontalAlignment="Center"></Label>
-
             <StackPanel Orientation="Horizontal">
                 <Grid Name="MenuGrid" Visibility="Visible" Width="250" Height="720" HorizontalAlignment="Left" Background="#1163ada8">
                     <StackPanel Margin="0,30,0,0">
-                        <Label Margin="0,10,0,0" Foreground="#FFFFFF" HorizontalAlignment="Center" FontWeight="ExtraLight" FontSize="18">Bem-vindo, Marcos!</Label>
+                        <Label Name="WelcomeLabel" Margin="0,10,0,0" Foreground="#FFFFFF" HorizontalAlignment="Center" HorizontalContentAlignment="Center" FontWeight="ExtraLight" FontSize="18">Bem-vindo, Marcos!</Label>
                         <Image Margin="0,30,0,0" Width="150" Height="150" Source="/Pages/Logo.png"></Image>
                         <Label Margin="0,20,0,20" HorizontalAlignment="Center" Foreground="#FFFFFF" FontSize="12" FontWeight="ExtraLight" FontStyle="Italic">©PEGASUS</Label>
                         <Grid Name="MeuPerfilGrid" MouseLeftButtonDown="MeuPerfilGrid_MouseLeftButtonDown" MouseEnter="MeuPerfilGrid_MouseEnter" MouseLeave="MeuPerfilGrid_MouseLeave" Margin="0,0,0,20" Width="250" Height="60" VerticalAlignment="Center">
@@ -41,8 +39,6 @@
                         <Grid Name="ConfiguracoesGrid" MouseEnter="ConfiguracoesGrid_MouseEnter" MouseLeave="ConfiguracoesGrid_MouseLeave" MouseLeftButtonDown="ConfiguracoesGrid_MouseLeftButtonDown" Margin="0,0,0,20" Width="250" Height="60" VerticalAlignment="Center">
                             <Label Margin="0,0,0,0" Foreground="#FFFFFF" VerticalAlignment="Center" HorizontalAlignment="Center" FontWeight="ExtraLight" FontSize="18">Configurações</Label>
                         </Grid>
-
-
                     </StackPanel>
 
 
@@ -75,9 +71,6 @@
                             </ScrollViewer.Background>
                             <StackPanel Margin="0,0,0,0">
                                 <Label Margin="0,40,0,40" Foreground="#FFFFFF" FontSize="40" HorizontalAlignment="Center" FontWeight="ExtraLight" Content="Minha Carteira"/>
-
-
-
                                 <Grid Name="SaldoGrid" MouseEnter="SaldoGrid_MouseEnter" MouseLeave="SaldoGrid_MouseLeave" Margin="0,0,0,5" Width="800" Height="100" Background="#1163ada8">
                                     <StackPanel Orientation="Horizontal">
                                         <Image Margin="20,0,0,0" Width="80" Source="/Pages/AmountIcon.png"></Image>
@@ -200,7 +193,10 @@
                                     <Label HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#FFFFFF" FontWeight="ExtraLight" FontSize="16" >Voltar</Label>
                                 </Grid>
                                 <Label Margin="0,0,0,40" Foreground="#FFFFFF" FontWeight="ExtraLight" FontSize="40" HorizontalAlignment="Center">Meus Investimentos</Label>
-                                <Label Margin="20,0,0,40" Foreground="#FFFFFF" FontWeight="ExtraLight" FontSize="18">Investimento 1</Label>
+                                <Grid Width="800" Height="80">
+                                    <Label Margin="20,0,0,40" Foreground="#FFFFFF" FontWeight="ExtraLight" FontSize="18">Investimento 1</Label>
+                                </Grid>
+                                
                                 <Label Margin="20,0,0,40" Foreground="#FFFFFF" FontWeight="ExtraLight" FontSize="18">Investimento 1</Label>
                                 <Label Margin="20,0,0,40" Foreground="#FFFFFF" FontWeight="ExtraLight" FontSize="18">Investimento 1</Label>
 
@@ -214,16 +210,16 @@
                                     <GradientStop Color="#FF0A283E" Offset="1"/>
                                 </LinearGradientBrush>
                             </ScrollViewer.Background>
+                            
                             <StackPanel Name="MinhasAcoesPanel" Orientation="Vertical">
+                                <Grid Name="BotaoVoltarMinhasAcoes" Margin="10,10,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="150" Height="30" Background="#1163ada8" MouseEnter="BotaoVoltarMinhasAcoes_MouseEnter" MouseLeave="BotaoVoltarMinhasAcoes_MouseLeave" MouseLeftButtonDown="BotaoVoltarMinhasAcoes_MouseLeftButtonDown" >
+                                    <Label HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#FFFFFF" FontWeight="ExtraLight" FontSize="16" >Voltar</Label>
+                                </Grid>
                                 <Label HorizontalAlignment="Center" FontSize="40" FontWeight="ExtraLight" Foreground="#FFFFFF" Margin="0,20,0,40">Minhas Ações</Label>
                             </StackPanel>
                         </ScrollViewer>
                     </Grid>
-
-
                 </StackPanel>
-
-
             </StackPanel>
         </Grid>
 

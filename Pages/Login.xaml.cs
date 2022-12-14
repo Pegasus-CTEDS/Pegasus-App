@@ -12,7 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-
+using Pegasus_App.Models;
 using PegasusPacket;
 
 namespace Pegasus_App.Pages
@@ -36,7 +36,10 @@ namespace Pegasus_App.Pages
             Packet packetIn = conn.RequestLogin(UsernameInput.Text, PasswordInput.Password);
             if(packetIn.RequestStatus == Packet.Status.Success)
             {
-                UserSpace us = new UserSpace(conn);
+                UserSpace us;
+                User.Username = UsernameInput.Text;
+                us = new UserSpace(conn);
+                
                 us.Show();
             } 
             else

@@ -29,6 +29,9 @@ namespace Pegasus_App.Pages
             background_left_grid = MeuPerfilGrid.Background;
             LoadPortfolioDataGridView();
             LoadAssets();
+            LoadInvestments();
+            WelcomeLabel.Content = $"Bem-vindo,\n" + User.Username + "!";
+            WelcomeLabel.HorizontalContentAlignment = HorizontalAlignment.Center;
         }
 
         void LoadAssets()
@@ -38,6 +41,10 @@ namespace Pegasus_App.Pages
             {
                 MinhasAcoesPanel.Children.Add(AssetGrid(asset.Name, asset.ComercialName, asset.Price, asset.Invested, asset.Variation));
             }
+        }
+        void LoadInvestments()
+        {
+
         }
         public Grid AssetGrid(string asset_name, string comercial_name, double price, double amount, double variation)
         {
@@ -191,7 +198,8 @@ namespace Pegasus_App.Pages
 
         private void MeusInvestimentosGrid_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-
+            ResumoCarteira.Visibility = Visibility.Collapsed;
+            PainelInvestmentos.Visibility = Visibility.Visible;
         }
 
         private void AcoesGrid_MouseEnter(object sender, MouseEventArgs e)
@@ -207,7 +215,8 @@ namespace Pegasus_App.Pages
 
         private void AcoesGrid_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-
+            ResumoCarteira.Visibility = Visibility.Collapsed;
+            MinhasAcoes.Visibility = Visibility.Visible;
         }
 
         private void ConfiguracoesGrid_MouseEnter(object sender, MouseEventArgs e)
@@ -449,6 +458,22 @@ namespace Pegasus_App.Pages
         private void BotaoVoltar_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             PainelInvestmentos.Visibility = Visibility.Collapsed;
+            ResumoCarteira.Visibility = Visibility.Visible;
+        }
+
+        private void BotaoVoltarMinhasAcoes_MouseEnter(object sender, MouseEventArgs e)
+        {
+
+        }
+
+        private void BotaoVoltarMinhasAcoes_MouseLeave(object sender, MouseEventArgs e)
+        {
+
+        }
+
+        private void BotaoVoltarMinhasAcoes_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            MinhasAcoes.Visibility = Visibility.Collapsed;
             ResumoCarteira.Visibility = Visibility.Visible;
         }
     }
