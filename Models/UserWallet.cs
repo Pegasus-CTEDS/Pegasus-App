@@ -31,6 +31,12 @@ namespace Pegasus_App.Models
             UserAssets.Add(new Asset("PETR4", "PETROBRAS PN N2", 23.32, 2013.21, -2.46));
             UserAssets.Add(new Asset("AMBEV3", "AMBV S/ A ON", 15.28, 2013.21, 0.26));
             UserAssets.Add(new Asset("BBAS3", "BRASIL ON EJ NM", 31.86, 2013.21, -4.88));
+
+            UserInvestments = new List<Investment>();
+            UserInvestments.Add(new Investment("Tesouro Direto", 2337.54, 104.76, 1.23));
+            UserInvestments.Add(new Investment("Poupança Nubank", 2337.54, 104.76, -1.23));
+            UserInvestments.Add(new Investment("Renda Fixa", 2337.54, 104.76, 1.23));
+
             ComputeGlobalMetrics();
         }
         public static void ComputeGlobalMetrics()
@@ -49,6 +55,7 @@ namespace Pegasus_App.Models
         /// list of all the assets owned by the user
         /// </summary>
         public static List<Asset>? UserAssets { get; set; }
+        public static List<Investment>? UserInvestments { get; set; }
 
     }
 }

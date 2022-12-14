@@ -28,23 +28,95 @@ namespace Pegasus_App.Pages
             InitializeComponent();
             background_left_grid = InvestirGrid.Background;
             LoadPortfolioDataGridView();
-            LoadAssets();
-            LoadInvestments();
+            LoadWallet();
             WelcomeLabel.Content = $"Bem-vindo,\n" + User.Username + "!";
             WelcomeLabel.HorizontalContentAlignment = HorizontalAlignment.Center;
         }
 
-        void LoadAssets()
+        void LoadWallet()
         {
             UserWallet.GetWallet();
             foreach (var asset in UserWallet.UserAssets)
             {
                 MinhasAcoesPanel.Children.Add(AssetGrid(asset.Name, asset.ComercialName, asset.Price, asset.Invested, asset.Variation));
             }
+            foreach(var inv in UserWallet.UserInvestments)
+            {
+                PainelInvestimentosStack.Children.Add(InvestmentGridModel(inv.Name, inv.Amount, inv.Balance, inv.Yield));
+            }
         }
-        void LoadInvestments()
+        Thickness margin(double left, double top, double right, double bottom)
         {
+            Thickness mg = new Thickness();
+            mg.Left = left;
+            mg.Top = top;
+            mg.Right = right;
+            mg.Bottom = bottom;
+            return mg;
+        }
+        Label lb(string content, double size, FontStyle fs, FontWeight fw)
+        {
+            Label lb = new Label();
+            var newcolor = new BrushConverter();
+            lb.Foreground = (Brush)newcolor.ConvertFrom("#FFFFFFFF");
+            lb.FontWeight = fw;
+            lb.FontStyle = fs;
+            lb.FontSize = size;
+            lb.Content = content;
+            return lb;
+        }
+        public Grid InvestmentGridModel(string investment_name, double balance, double yield, double variation)
+        {
+            Grid grid = new Grid();
+            StackPanel InvestmentMainContentPanel = new StackPanel();
+            StackPanel BalancePanel = new StackPanel();
+            StackPanel YieldPanel = new StackPanel();
+            StackPanel VariationPanel = new StackPanel();
 
+            var newcolor = new BrushConverter();
+
+            grid.Width = 800;
+            grid.Height = 100;
+            grid.Margin = margin(0, 0, 0, 5);
+
+            grid.Background = (Brush)newcolor.ConvertFrom("#1163ada8");
+
+            InvestmentMainContentPanel.Margin = margin(20, 0, 0, 0);
+            BalancePanel.Margin = margin(40, 0, 0, 0);
+            YieldPanel.Margin = margin(40, 0, 0, 0);
+            VariationPanel.Margin = margin(40, 0, 0, 0);
+
+            InvestmentMainContentPanel.Orientation = Orientation.Horizontal;
+
+            grid.Children.Add(InvestmentMainContentPanel);
+            InvestmentMainContentPanel.VerticalAlignment = VerticalAlignment.Center;
+            Label inv_name_label = lb(investment_name, 26, FontStyles.Normal, FontWeights.ExtraLight);
+            inv_name_label.Width = 250;
+            InvestmentMainContentPanel.Children.Add(inv_name_label);
+            InvestmentMainContentPanel.Children.Add(BalancePanel);
+            InvestmentMainContentPanel.Children.Add(YieldPanel);
+            InvestmentMainContentPanel.Children.Add(VariationPanel);
+
+            BalancePanel.Children.Add(lb("investido:", 26, FontStyles.Italic, FontWeights.ExtraLight));
+            BalancePanel.Children.Add(lb($"R$ {balance}", 18, FontStyles.Italic, FontWeights.ExtraLight));
+
+            YieldPanel.Children.Add(lb("rendimento:", 26, FontStyles.Italic, FontWeights.ExtraLight));
+            YieldPanel.Children.Add(lb($"R$ {yield}", 18, FontStyles.Italic, FontWeights.ExtraLight));
+
+            Label variation_label = lb($"{variation}%", 18, FontStyles.Italic, FontWeights.ExtraLight);
+            if (variation >= 0)
+            {
+                variation_label.Foreground = (Brush)newcolor.ConvertFrom("#00ff00");
+            }
+            else
+            {
+                variation_label.Foreground = (Brush)newcolor.ConvertFrom("#d10000");
+            }
+            VariationPanel.Children.Add(lb("variação:", 26, FontStyles.Italic, FontWeights.ExtraLight));
+            VariationPanel.Children.Add(variation_label);
+
+            
+            return grid;
         }
         public Grid AssetGrid(string asset_name, string comercial_name, double price, double amount, double variation)
         {
@@ -71,27 +143,6 @@ namespace Pegasus_App.Pages
             AssetContent.Children.Add(PricePanel);
             AssetContent.Children.Add(InvestedPanel);
             AssetContent.Children.Add(VariationPanel);
-
-            Thickness margin(double left, double top, double right, double bottom)
-            {
-                Thickness mg = new Thickness();
-                mg.Left = left;
-                mg.Top = top;
-                mg.Right = right;
-                mg.Bottom = bottom;
-                return mg;
-            }
-
-            Label lb(string content, double size, FontStyle fs, FontWeight fw)
-            {
-                Label lb = new Label();
-                lb.Foreground = (Brush)newcolor.ConvertFrom("#FFFFFFFF");
-                lb.FontWeight = fw;
-                lb.FontStyle = fs;
-                lb.FontSize = size;
-                lb.Content = content;
-                return lb;
-            }
 
             AssetContent.Margin = margin(0, 0, 0, 0);
             AssetNamePanel.Margin = margin(20, 0, 80, 0);
