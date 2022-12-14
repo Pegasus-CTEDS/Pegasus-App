@@ -9,17 +9,40 @@
       ShowsNavigationUI="False"
       Title="InitialPage">
 
-    <Grid Background="#001423">
-        <Rectangle Width="480" Height="490" Fill="#0c2233">
-
-        </Rectangle>
-        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
-            <Label Margin="0,20,0,50" FontWeight="ExtraLight" HorizontalAlignment="Center" FontSize="32" Foreground="#FFFFFF">Bem vindo(a) ao Pegasus!</Label>
-            <TextBlock Width="400" Margin="300,10,300,5" Foreground="#FFFFFF" FontSize="22" FontWeight="ExtraLight" TextAlignment="Left">Novo por aqui? Cadastre-se!</TextBlock>
-            <Button Margin="300,10,300,5" Width="400" Height="50" Click="RegisterButtonClick" Content="Cadastrar" Background="#1E2832" FontWeight="ExtraLight" FontSize="24" Foreground="#FFFFFF"></Button>
-            <TextBlock Width="400" Margin="300,10,300,5" Foreground="#FFFFFF" FontSize="22" FontWeight="ExtraLight" TextAlignment="Left">Já possui conta? Faça login</TextBlock>
-            <Button Margin="300,10,300,5" Width="400" Height="50" Click="LoginButtonClick" Content="Entrar" Background="#1E2832" FontWeight="ExtraLight" FontSize="24" Foreground="#FFFFFF"></Button>
+    <Grid>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="#FF001423" Offset="0.004"/>
+                <GradientStop Color="#FF01192B" Offset="1"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <Grid Name="AcessPage" Visibility="Collapsed">
+            <Rectangle Width="480" Height="490" Fill="#0c2233"></Rectangle>
+            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                <Label Margin="0,20,0,50" FontWeight="ExtraLight" HorizontalAlignment="Center" FontSize="32" Foreground="#FFFFFF">Bem vindo(a) ao Pegasus!</Label>
+                <Label Margin="300,10,300,5" Foreground="#FFFFFF" FontSize="22" FontWeight="ExtraLight" >Novo por aqui?</Label>
+                <Button Margin="300,10,300,5" Width="400" Height="50" Click="RegisterButtonClick" Content="Cadastrar" Background="#1E2832" FontWeight="ExtraLight" FontSize="24" Foreground="#FFFFFF"></Button>
+                <Label Margin="300,10,300,5" Foreground="#FFFFFF" FontSize="22" FontWeight="ExtraLight">Já possui conta? Entre!</Label>
+                <Button Margin="300,10,300,5" Width="400" Height="50" Click="LoginButtonClick" Content="Entrar" Background="#1E2832" FontWeight="ExtraLight" FontSize="24" Foreground="#FFFFFF"></Button>
+            </StackPanel>
+        </Grid>
+        <Grid Name="InitialPageGrid">
+            <Rectangle Width="600" Height="720">
+                <Rectangle.Fill>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FF01182A"/>
+                        <GradientStop Color="#FF011728" Offset="1"/>
+                    </LinearGradientBrush>
+                </Rectangle.Fill>
+            </Rectangle>
+            <Rectangle>
                 
-        </StackPanel>
+            </Rectangle>
+            <Image Width="350" Height="400" Source="/Pages/Logo.png"></Image>
+            <Label Margin="0,60,0,0" Foreground="#FFFFFF" FontSize="40" FontStretch="UltraExpanded" FontWeight="ExtraLight" HorizontalAlignment="Center">PEGASUS</Label>
+            <Grid Name="ComecoInvestirGrid" MouseEnter="ComecoInvestirGrid_MouseEnter" MouseLeave="ComecoInvestirGrid_MouseLeave" MouseLeftButtonDown="ComecoInvestirGrid_MouseLeftButtonDown" Margin="0,550,0,0" Width="530" Height="80" Background="#1163ada8">
+                <Label Foreground="#FFFFFF" FontSize="30" FontWeight="ExtraLight" VerticalAlignment="Center" HorizontalAlignment="Center">Comece a investir!</Label>
+            </Grid>
+        </Grid>
     </Grid>
 </Page>

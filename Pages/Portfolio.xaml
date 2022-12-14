@@ -21,12 +21,10 @@
             <StackPanel Orientation="Horizontal">
                 <Grid Name="MenuGrid" Visibility="Visible" Width="250" Height="720" HorizontalAlignment="Left" Background="#1163ada8">
                     <StackPanel Margin="0,30,0,0">
-                        <Label Name="WelcomeLabel" Margin="0,10,0,0" Foreground="#FFFFFF" HorizontalAlignment="Center" HorizontalContentAlignment="Center" FontWeight="ExtraLight" FontSize="18">Bem-vindo, Marcos!</Label>
-                        <Image Margin="0,30,0,0" Width="150" Height="150" Source="/Pages/Logo.png"></Image>
-                        <Label Margin="0,20,0,20" HorizontalAlignment="Center" Foreground="#FFFFFF" FontSize="12" FontWeight="ExtraLight" FontStyle="Italic">©PEGASUS</Label>
-                        <Grid Name="MeuPerfilGrid" MouseLeftButtonDown="MeuPerfilGrid_MouseLeftButtonDown" MouseEnter="MeuPerfilGrid_MouseEnter" MouseLeave="MeuPerfilGrid_MouseLeave" Margin="0,0,0,20" Width="250" Height="60" VerticalAlignment="Center">
-                            <Label Margin="0,0,0,0" Foreground="#FFFFFF" VerticalAlignment="Center" HorizontalAlignment="Center" FontWeight="ExtraLight" FontSize="18">Meu Perfil</Label>
-                        </Grid>
+                        <Label Name="WelcomeLabel" Margin="0,0,0,0" Foreground="#FFFFFF" HorizontalAlignment="Center" HorizontalContentAlignment="Center" FontWeight="ExtraLight" FontSize="18">Bem-vindo, Marcos!</Label>
+                        <Image Margin="0,20,0,0" Width="130" Height="130" Source="/Pages/Logo.png"></Image>
+                        <Label Margin="0,10,0,10" HorizontalAlignment="Center" Foreground="#FFFFFF" FontSize="10" FontWeight="ExtraLight" FontStyle="Italic">©PEGASUS</Label>
+                        
                         <Grid Name="MinhaCarteiraGrid" MouseEnter="MinhaCarteiraGrid_MouseEnter" MouseLeave="MinhaCarteiraGrid_MouseLeave" MouseLeftButtonDown="MinhaCarteiraGrid_MouseLeftButtonDown" Margin="0,0,0,20" Width="250" Height="60" VerticalAlignment="Center">
                             <Label Margin="0,0,0,0" Foreground="#FFFFFF" VerticalAlignment="Center" HorizontalAlignment="Center" FontWeight="ExtraLight" FontSize="18">Minha Carteira</Label>
                         </Grid>
@@ -34,7 +32,10 @@
                             <Label Margin="0,0,0,0" Foreground="#FFFFFF" VerticalAlignment="Center" HorizontalAlignment="Center" FontWeight="ExtraLight" FontSize="18">Meus Investimentos</Label>
                         </Grid>
                         <Grid Name="AcoesGrid" MouseEnter="AcoesGrid_MouseEnter" MouseLeave="AcoesGrid_MouseLeave" MouseLeftButtonDown="AcoesGrid_MouseLeftButtonDown" Margin="0,0,0,20" Width="250" Height="60" VerticalAlignment="Center">
-                            <Label Margin="0,0,0,0" Foreground="#FFFFFF" VerticalAlignment="Center" HorizontalAlignment="Center" FontWeight="ExtraLight" FontSize="18">Ações</Label>
+                            <Label Margin="0,0,0,0" Foreground="#FFFFFF" VerticalAlignment="Center" HorizontalAlignment="Center" FontWeight="ExtraLight" FontSize="18">Minhas Ações</Label>
+                        </Grid>
+                        <Grid Name="InvestirGrid" MouseLeftButtonDown="InvestirGrid_MouseLeftButtonDown" MouseEnter="InvestirGrid_MouseEnter" MouseLeave="InvestirGrid_MouseLeave" Margin="0,0,0,20" Width="250" Height="60" VerticalAlignment="Center">
+                            <Label Margin="0,0,0,0" Foreground="#FFFFFF" VerticalAlignment="Center" HorizontalAlignment="Center" FontWeight="ExtraLight" FontSize="18">Investir</Label>
                         </Grid>
                         <Grid Name="ConfiguracoesGrid" MouseEnter="ConfiguracoesGrid_MouseEnter" MouseLeave="ConfiguracoesGrid_MouseLeave" MouseLeftButtonDown="ConfiguracoesGrid_MouseLeftButtonDown" Margin="0,0,0,20" Width="250" Height="60" VerticalAlignment="Center">
                             <Label Margin="0,0,0,0" Foreground="#FFFFFF" VerticalAlignment="Center" HorizontalAlignment="Center" FontWeight="ExtraLight" FontSize="18">Configurações</Label>

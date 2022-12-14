@@ -39,5 +39,23 @@ namespace Pegasus_App.Pages
         {
             this.NavigationService.Navigate(new Register(Conn));
         }
+
+        private void ComecoInvestirGrid_MouseEnter(object sender, MouseEventArgs e)
+        {
+            var newcolor = new BrushConverter();
+            ComecoInvestirGrid.Background = (Brush)newcolor.ConvertFrom("#FF133550");
+        }
+
+        private void ComecoInvestirGrid_MouseLeave(object sender, MouseEventArgs e)
+        {
+            var newcolor = new BrushConverter();
+            ComecoInvestirGrid.Background = (Brush)newcolor.ConvertFrom("#1163ada8");
+        }
+
+        private void ComecoInvestirGrid_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            AcessPage.Visibility = Visibility.Visible;
+            InitialPageGrid.Visibility = Visibility.Collapsed;
+        }
     }
 }

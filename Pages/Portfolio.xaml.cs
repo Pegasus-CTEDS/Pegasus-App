@@ -26,7 +26,7 @@ namespace Pegasus_App.Pages
         {
             this.conn = conn;
             InitializeComponent();
-            background_left_grid = MeuPerfilGrid.Background;
+            background_left_grid = InvestirGrid.Background;
             LoadPortfolioDataGridView();
             LoadAssets();
             LoadInvestments();
@@ -153,18 +153,18 @@ namespace Pegasus_App.Pages
             
         }
 
-        private void MeuPerfilGrid_MouseEnter(object sender, MouseEventArgs e)
+        private void InvestirGrid_MouseEnter(object sender, MouseEventArgs e)
         {
             var newcolor = new BrushConverter();
-            MeuPerfilGrid.Background = (Brush)newcolor.ConvertFrom("#1163ada8");
+            InvestirGrid.Background = (Brush)newcolor.ConvertFrom("#1163ada8");
         }
 
-        private void MeuPerfilGrid_MouseLeave(object sender, MouseEventArgs e)
+        private void InvestirGrid_MouseLeave(object sender, MouseEventArgs e)
         {
-            MeuPerfilGrid.Background = background_left_grid;
+            InvestirGrid.Background = background_left_grid;
         }
 
-        private void MeuPerfilGrid_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        private void InvestirGrid_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             this.NavigationService.Navigate(new Portfolio(conn));
         }
@@ -182,7 +182,9 @@ namespace Pegasus_App.Pages
 
         private void MinhaCarteiraGrid_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-            this.NavigationService.Navigate(new Wallet(conn));
+            ResumoCarteira.Visibility = Visibility.Visible;
+            PainelInvestmentos.Visibility = Visibility.Collapsed;
+            MinhasAcoes.Visibility = Visibility.Collapsed;
         }
 
         private void MeusInvestimentosGrid_MouseEnter(object sender, MouseEventArgs e)
@@ -200,6 +202,7 @@ namespace Pegasus_App.Pages
         {
             ResumoCarteira.Visibility = Visibility.Collapsed;
             PainelInvestmentos.Visibility = Visibility.Visible;
+            MinhasAcoes.Visibility = Visibility.Collapsed;
         }
 
         private void AcoesGrid_MouseEnter(object sender, MouseEventArgs e)
@@ -217,6 +220,7 @@ namespace Pegasus_App.Pages
         {
             ResumoCarteira.Visibility = Visibility.Collapsed;
             MinhasAcoes.Visibility = Visibility.Visible;
+            PainelInvestmentos.Visibility = Visibility.Collapsed;
         }
 
         private void ConfiguracoesGrid_MouseEnter(object sender, MouseEventArgs e)
