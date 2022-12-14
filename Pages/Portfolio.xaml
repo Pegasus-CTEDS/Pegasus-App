@@ -66,7 +66,7 @@
                         </Grid>
                     </StackPanel>
                     <Grid Name="MainPageContent" Margin="0,30,0,0" Width="900" Height="600" Background="#0c2233">
-                        <ScrollViewer Name="ResumoCarteira" Visibility="Collapsed" >
+                        <ScrollViewer Name="ResumoCarteira" Visibility="Visible" >
                             <ScrollViewer.Background>
                                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                                     <GradientStop Color="#0c2233"/>
@@ -207,7 +207,7 @@
                             </StackPanel>
 
                         </ScrollViewer>
-                        <ScrollViewer Name="MinhasAcoes" Visibility="Visible">
+                        <ScrollViewer Name="MinhasAcoes" Visibility="Collapsed">
                             <ScrollViewer.Background>
                                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                                     <GradientStop Color="#0c2233"/>

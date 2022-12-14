@@ -14,6 +14,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Data;
+using Pegasus_App.Models;
 
 namespace Pegasus_App.Pages
 {
@@ -32,8 +33,11 @@ namespace Pegasus_App.Pages
 
         void LoadAssets()
         {
-            MinhasAcoesPanel.Children.Add(AssetGrid("ASAI3", "ASSAÍ", 4, 6, 5));
-            MinhasAcoesPanel.Children.Add(AssetGrid("MALU3", "MAGAZINE LUÍZA", 4, 5, 5));
+            UserWallet.GetWallet();
+            foreach (var asset in UserWallet.UserAssets)
+            {
+                MinhasAcoesPanel.Children.Add(AssetGrid(asset.Name, asset.ComercialName, asset.Price, asset.Invested, asset.Variation));
+            }
         }
         public Grid AssetGrid(string asset_name, string comercial_name, double price, double amount, double variation)
         {
@@ -98,9 +102,17 @@ namespace Pegasus_App.Pages
             InvestedPanel.Children.Add(lb("investido", 26, FontStyles.Italic, FontWeights.ExtraLight));
             InvestedPanel.Children.Add(lb($"R$ {amount}", 20, FontStyles.Italic, FontWeights.ExtraLight));
 
+            Label variation_label = lb($"{variation}%", 20, FontStyles.Italic, FontWeights.ExtraLight);
+            if (variation >= 0)
+            {
+                variation_label.Foreground = (Brush)newcolor.ConvertFrom("#d10000");
+            } else
+            {
+                variation_label.Foreground = (Brush)newcolor.ConvertFrom("#00ff00");
+            }
             VariationPanel.Children.Add(lb("variação", 26, FontStyles.Italic, FontWeights.ExtraLight));
-            VariationPanel.Children.Add(lb($"{variation}%", 20, FontStyles.Italic, FontWeights.ExtraLight));
-
+            VariationPanel.Children.Add(variation_label);
+            
             return asset;
         }
 
@@ -420,7 +432,8 @@ namespace Pegasus_App.Pages
 
         private void VerAcoes_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-
+            ResumoCarteira.Visibility = Visibility.Collapsed;
+            MinhasAcoes.Visibility = Visibility.Visible;
         }
 
         private void BotaoVoltar_MouseEnter(object sender, MouseEventArgs e)
