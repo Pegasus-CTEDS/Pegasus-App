@@ -217,7 +217,10 @@ namespace Pegasus_App.Pages
 
         private void InvestirGrid_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-            this.NavigationService.Navigate(new Portfolio(conn));
+            ResumoCarteira.Visibility = Visibility.Collapsed;
+            PainelInvestmentos.Visibility = Visibility.Collapsed;
+            MinhasAcoes.Visibility = Visibility.Collapsed;
+            Investir.Visibility = Visibility.Visible;
         }
 
         private void MinhaCarteiraGrid_MouseEnter(object sender, MouseEventArgs e)
@@ -236,6 +239,7 @@ namespace Pegasus_App.Pages
             ResumoCarteira.Visibility = Visibility.Visible;
             PainelInvestmentos.Visibility = Visibility.Collapsed;
             MinhasAcoes.Visibility = Visibility.Collapsed;
+            Investir.Visibility = Visibility.Collapsed;
         }
 
         private void MeusInvestimentosGrid_MouseEnter(object sender, MouseEventArgs e)
@@ -254,6 +258,7 @@ namespace Pegasus_App.Pages
             ResumoCarteira.Visibility = Visibility.Collapsed;
             PainelInvestmentos.Visibility = Visibility.Visible;
             MinhasAcoes.Visibility = Visibility.Collapsed;
+            Investir.Visibility = Visibility.Collapsed;
         }
 
         private void AcoesGrid_MouseEnter(object sender, MouseEventArgs e)
@@ -272,6 +277,7 @@ namespace Pegasus_App.Pages
             ResumoCarteira.Visibility = Visibility.Collapsed;
             MinhasAcoes.Visibility = Visibility.Visible;
             PainelInvestmentos.Visibility = Visibility.Collapsed;
+            Investir.Visibility = Visibility.Collapsed;
         }
 
         private void ConfiguracoesGrid_MouseEnter(object sender, MouseEventArgs e)
@@ -530,6 +536,21 @@ namespace Pegasus_App.Pages
         {
             MinhasAcoes.Visibility = Visibility.Collapsed;
             ResumoCarteira.Visibility = Visibility.Visible;
+        }
+
+        private void BotaoVoltarInvestir_MouseEnter(object sender, MouseEventArgs e)
+        {
+
+        }
+
+        private void BotaoVoltarInvestir_MouseLeave(object sender, MouseEventArgs e)
+        {
+
+        }
+
+        private void BotaoVoltarInvestir_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+
         }
     }
 }

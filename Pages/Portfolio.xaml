@@ -154,7 +154,7 @@
                                         </StackPanel>
                                     </StackPanel>
                                 </Grid>
-                                <Grid Name="GridAcao1" MouseEnter="GridAcao1_MouseEnter" MouseLeave="GridAcao1_MouseLeave" Margin="0,00,0,5" Width="800" VerticalAlignment="Center" Height="100" Background="#1163ada8">
+                                <Grid Name="GridAcao1" MouseEnter="GridAcao1_MouseEnter" MouseLeave="GridAcao1_MouseLeave" Margin="0,0,0,5" Width="800" VerticalAlignment="Center" Height="100" Background="#1163ada8">
                                     <StackPanel Orientation="Horizontal">
                                         <StackPanel Margin="20,0,0,0" VerticalAlignment="Center" Orientation="Vertical">
                                             <Label Foreground="#FFFFFF" VerticalAlignment="Center" FontSize="22" FontWeight="ExtraLight" Content="Dividendos"></Label>
@@ -163,7 +163,7 @@
                                         </StackPanel>
                                     </StackPanel>
                                 </Grid>
-                                <Grid Name="GridAcao2" MouseEnter="GridAcao2_MouseEnter" MouseLeave="GridAcao2_MouseLeave" Margin="0,00,0,5" Width="800" VerticalAlignment="Center" Height="100" Background="#1163ada8">
+                                <Grid Name="GridAcao2" MouseEnter="GridAcao2_MouseEnter" MouseLeave="GridAcao2_MouseLeave" Margin="0,0,0,5" Width="800" VerticalAlignment="Center" Height="100" Background="#1163ada8">
                                     <StackPanel Orientation="Horizontal">
                                         <StackPanel Margin="20,0,0,0" VerticalAlignment="Center" Orientation="Vertical">
                                             <Label Foreground="#FFFFFF" VerticalAlignment="Center" FontSize="22" FontWeight="ExtraLight" Content="Dividendos"></Label>
@@ -174,7 +174,7 @@
                                 </Grid>
                                 <Grid Name="VerAcoes" MouseEnter="VerAcoes_MouseEnter" MouseLeave="VerAcoes_MouseLeave" MouseLeftButtonDown="VerAcoes_MouseLeftButtonDown" Margin="600,10,0,20" Width="200" Height="50" HorizontalAlignment="Center" Background="#1163ada8">
                                     <StackPanel Orientation="Horizontal">
-                                        <StackPanel Margin="30,0,0,0" VerticalAlignment="Center" Orientation="Vertical">
+                                        <StackPanel Margin="58,0,0,0" VerticalAlignment="Center" Orientation="Vertical">
                                             <Label Foreground="#FFFFFF" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="18" FontWeight="ExtraLight" Content="Ver Ações"></Label>
                                         </StackPanel>
                                     </StackPanel>
@@ -210,6 +210,31 @@
                                     <Label HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#FFFFFF" FontWeight="ExtraLight" FontSize="16" >Voltar</Label>
                                 </Grid>
                                 <Label HorizontalAlignment="Center" FontSize="40" FontWeight="ExtraLight" Foreground="#FFFFFF" Margin="0,20,0,40">Minhas Ações</Label>
+                            </StackPanel>
+                        </ScrollViewer>
+                        <ScrollViewer Name="Investir" Visibility="Collapsed">
+                            <ScrollViewer.Background>
+                                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                    <GradientStop Color="#0c2233"/>
+                                    <GradientStop Color="#FF0A283E" Offset="1"/>
+                                </LinearGradientBrush>
+                            </ScrollViewer.Background>
+                            <StackPanel Name="InvestirPanel" Orientation="Vertical">
+                                <Grid Name="BotaoVoltarInvestir" Margin="10,10,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="150" Height="30" Background="#1163ada8" MouseEnter="BotaoVoltarInvestir_MouseEnter" MouseLeave="BotaoVoltarInvestir_MouseLeave"  MouseLeftButtonDown="BotaoVoltarInvestir_MouseLeftButtonDown" >
+                                    <Label HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#FFFFFF" FontWeight="ExtraLight" FontSize="16" >Voltar</Label>
+                                </Grid>
+                                
+                                <Grid Margin="0,10,0,5" Width="500" Height="500" Background="#1163ada8">
+                                    <StackPanel>
+                                        <Label Margin="0,20,0,40" HorizontalAlignment="Center" FontSize="40" FontWeight="ExtraLight" Foreground="#FFFFFF" >Invista!</Label>
+                                        <Label Margin="0,0,0,0" Width="400" HorizontalAlignment="Center" FontSize="26" FontWeight="ExtraLight" Foreground="#FFFFFF" >Nome do Ativo</Label>
+                                        <TextBox Margin="0,0,0,40" Width="400" Height="40" FontSize="26" FontWeight="ExtraLight"></TextBox>
+                                        <Label Margin="0,0,0,0" Width="400" HorizontalAlignment="Center" FontSize="26" FontWeight="ExtraLight" Foreground="#FFFFFF" >Valor (R$)</Label>
+                                        <TextBox Margin="0,0,0,40" Width="400" Height="40" FontSize="26" FontWeight="ExtraLight"></TextBox>
+                                        <Button Width="300" Height="50" Margin="0, 0, 0, 0" FontWeight="ExtraLight" Content="Comprar" Background="#1E2832" FontSize="24" Foreground="#FFFFFF"></Button>
+                                    </StackPanel>
+                                    
+                                </Grid>
                             </StackPanel>
                         </ScrollViewer>
                     </Grid>
